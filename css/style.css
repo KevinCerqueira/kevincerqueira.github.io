@@ -1,0 +1,98 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@media only screen and (max-width: 770px) {
+  .desktop {
+    display: none !important;
+  }
+  #content {
+    margin-left: 0% !important;
+    align-items: center;
+  }
+}
+
+body {
+  color: #d0d3d3;
+  background: rgb(0, 12, 8);
+  background: linear-gradient(
+    90deg,
+    rgba(0, 17, 11, 1) 20%,
+    rgba(0, 0, 0, 1) 100%
+  );
+}
+.horizontal {
+  align-items: center;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+.font-mont {
+  font-family: Montserrat;
+}
+.font-staat {
+  font-family: Staatliches;
+}
+.myyellow-background {
+  background-color: #ffdf31 !important;
+}
+.mygreen-background {
+  background-color: #00764c !important;
+}
+.mygrey-background {
+  background-color: #d0d3d3 !important;
+}
+.myyellow-text {
+  color: #ffdf31 !important;
+}
+.mygreen-text {
+  color: #00764c !important;
+}
+.mygrey-text {
+  color: #d0d3d3 !important;
+}
+.radius-circle{
+  border-bottom-left-radius: 200px !important;
+}
+.texts-inside{
+  color: #d0d3d3 !important;
+  font-size: 24px !important;
+}
+.links-anchors{
+  font-size: 40px;
+  color: #cecdcd !important;
+  font-family: 'Bebas Neue';
+}
+#avatar {
+  margin-top: 16%;
+  border: solid 7px;
+  width: 70% !important;
+}
+#content {
+  margin-left: 25%;
+}
+#mynav {
+  font-family: Staatliches;
+  height: 100% !important;
+}
+#name {
+  font-size: 80px;
+}
+#name{
+  font-size: 136px !important;
+  height: 90px !important;
+}
+#redes{
+  font-size: 50px;
+}
+#linkedin {
+  text-decoration-line: none;
+}
+#github {
+  text-decoration-line: none;
+}
+#redes span {
+  font-size: 55px;
+}
+#subtitle{
+  font-size: 24px !important;
+  font-family: 'Bebas Neue';
+}
