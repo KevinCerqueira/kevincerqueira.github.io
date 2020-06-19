@@ -24,7 +24,23 @@
     <title>Kevin Gomes</title>
   </head>
   <body>
-    <!-- Navbar -->
+    <!-- Navbar MOBILE -->
+    <nav id="container-navbar" class="navbar navbar-expand-lg navbar-dark mobile">
+      <a class="navbar-brand font-staat" href="#home">MENU</a>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav">
+          <a class="nav-item nav-link links-anchors" href="#sobre">SOBRE</a>
+          <a class="nav-item nav-link links-anchors" href="#educacao">EDUCACAO</a>
+          <a class="nav-item nav-link links-anchors" href="#experiencia">experiencia</a>
+          <a class="nav-item nav-link links-anchors" href="#skills">HABILIDADES</a>
+        </div>
+      </div>
+    </nav>
+    <!-- END Navbar MOBILE -->
+    <!-- Navbar DESKTOP -->
     <nav
       id="mynav"
       class="desktop container col-md-3 text-center position-fixed p-4"
@@ -37,7 +53,7 @@
       />
       <div id="anchors" class="p-3 mt-2 h3">
         <div class="col mt-3">
-          <a class="links-anchors" href="#content">Sobre</a>
+          <a class="links-anchors" href="#home">Sobre</a>
         </div>
         <div class="col mt-4">
           <a class="links-anchors" href="#educacao">Educação</a>
@@ -50,17 +66,19 @@
         </div>
       </div>
     </nav>
-    <!-- END Navbar -->
+    <!-- END Navbar DESKTOP -->
 
     <!-- Container -->
-    <div id="content" class="p-4">
+    <div id="home" class="p-4">
       <div id="names">
         <label id="first-name" class="name-lastname">KEVIN</label>
         <label id="last-name" class="name-lastname mygreen-text">GOMES</label>
       </div>
       <div id="subtitle">
         <label class="h3 text-uppercase mt-0 pl-1">
-          Brasileiro, 20 anos. Feira de Santana - BA
+          Brasileiro, 20 anos. 
+          <br class="mobile">
+          Feira de Santana - BA
           <br class="mobile">
           <a
             id="email"
