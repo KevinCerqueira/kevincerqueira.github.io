@@ -1,12 +1,37 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&display=swap");
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
 @media only screen and (max-width: 770px) {
   .desktop {
     display: none !important;
   }
+  .mobile {
+    visibility: hidden;
+  }
   #content {
     margin-left: 0% !important;
     align-items: center;
+  }
+  .name-lastname {
+    text-align: center;
+    font-size: 75px !important;
+  }
+  #names {
+    text-align: center;
+  }
+  #subtitle {
+    text-align: center !important;
+  }
+  #redes {
+    text-align: center;
+  }
+  .social-media {
+    margin: 0% !important;
+    font-size: 40px;
+  }
+}
+@media only screen and (min-width: 770px) {
+  .mobile {
+    display: none;
   }
 }
 
@@ -19,6 +44,11 @@ body {
     rgba(0, 0, 0, 1) 100%
   );
 }
+section {
+  padding-top: 8%;
+  padding-bottom: 8%;
+}
+
 .horizontal {
   align-items: center;
   display: flex;
@@ -49,17 +79,21 @@ body {
 .mygrey-text {
   color: #d0d3d3 !important;
 }
-.radius-circle{
+.radius-circle {
   border-bottom-left-radius: 200px !important;
 }
-.texts-inside{
+.texts-inside {
   color: #d0d3d3 !important;
   font-size: 24px !important;
 }
-.links-anchors{
+.links-anchors {
+  text-decoration: none;
   font-size: 40px;
   color: #cecdcd !important;
-  font-family: 'Bebas Neue';
+  font-family: "Bebas Neue";
+}
+.links-anchors:focus{
+  color: #00764c !important;
 }
 #avatar {
   margin-top: 16%;
@@ -73,14 +107,12 @@ body {
   font-family: Staatliches;
   height: 100% !important;
 }
-#name {
-  font-size: 80px;
+.name-lastname {
+  font-family: Staatliches;
+  font-size: 163px;
+  height: 80px;
 }
-#name{
-  font-size: 136px !important;
-  height: 90px !important;
-}
-#redes{
+#redes {
   font-size: 50px;
 }
 #linkedin {
@@ -92,7 +124,7 @@ body {
 #redes span {
   font-size: 55px;
 }
-#subtitle{
+#subtitle {
   font-size: 24px !important;
-  font-family: 'Bebas Neue';
+  font-family: "Bebas Neue";
 }

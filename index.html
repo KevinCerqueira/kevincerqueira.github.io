@@ -16,7 +16,12 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <title>Goomez</title>
+    <link
+      rel="shortcut icon"
+      href="https://avatars1.githubusercontent.com/u/38994372?s=400&u=f2c9bc80e82067ada42293ba0b87c0af62796e56&v=4"
+      type="image/x-icon"
+    />
+    <title>Kevin Gomes</title>
   </head>
   <body>
     <!-- Navbar -->
@@ -32,13 +37,13 @@
       />
       <div id="anchors" class="p-3 mt-2 h3">
         <div class="col mt-3">
-          <a class="links-anchors" href="#sobre">Sobre</a>
+          <a class="links-anchors" href="#content">Sobre</a>
         </div>
         <div class="col mt-4">
           <a class="links-anchors" href="#educacao">Educação</a>
         </div>
         <div class="col mt-4">
-          <a class="links-anchors" href="#xp">Experiência</a>
+          <a class="links-anchors" href="#experiencia">Experiência</a>
         </div>
         <div class="col mt-4">
           <a class="links-anchors" href="#skills">Habilidades</a>
@@ -49,46 +54,114 @@
 
     <!-- Container -->
     <div id="content" class="p-4">
-      <label id="name" class="font-staat mt-2">
-        <label id="first-name" class="">KEVIN</label>
-        <label id="last-name" class="mygreen-text">GOMES</label>
-      </label><br>
-      <label id="subtitle" class="h3 text-uppercase mt-0 pl-1">
-        Brasileiro, 20 anos. Feira de Santana - BA
-        <a id="email" type="mail" class="mygreen-text" href="mailto:kevingomes.uefs@gmail.com">
-          <i class="fa fa-envelope ml-1 mygreen-text" aria-hidden="true"></i>
-          kevingomes.uefs@gmail.com
-        </a>
-      </label>
+      <div id="names">
+        <label id="first-name" class="name-lastname">KEVIN</label>
+        <label id="last-name" class="name-lastname mygreen-text">GOMES</label>
+      </div>
+      <div id="subtitle">
+        <label class="h3 text-uppercase mt-0 pl-1">
+          Brasileiro, 20 anos. Feira de Santana - BA
+          <br class="mobile">
+          <a
+            id="email"
+            type="mail"
+            class="mygreen-text"
+            href="mailto:kevingomes.uefs@gmail.com"
+          >
+            <i class="fa fa-envelope ml-1 mygreen-text" aria-hidden="true"></i>
+            kevingomes.uefs@gmail.com
+          </a>
+        </label>
+      </div>
       <!-- SOBRE -->
-      <div id="sobre" class="container mt-5">
+      <section id="sobre" class="container scroll-animate">
         <div>
           <p class="h1 title-section font-staat">
-            <i class="fa fa-info-circle" aria-hidden="true"></i>
+            <i class="fa fa-info-circle mr-1 ml-0" aria-hidden="true"></i>
             SOBRE
           </p>
-          <p id="text-about" class="texts-inside font-mont">
-            Sou um desenvolvedor de softwares apaixonado por programação, gosto
-            de aprender novas tecnologias e atualizar o conhecimento das que já
-            aprendi. Busco novos desafios e experiências em minha carreira que
-            me permita estar sempre aprendendo.
+          <p id="text-about" class="texts-inside font-mont text-justify">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
           </p>
         </div>
         <div id="redes">
-          <a href="https://github.com/Goomez" id="github" class="mygreen-text mr-3">
+          <a
+            href="https://github.com/Goomez"
+            id="github"
+            class="mygreen-text mr-3 social-media"
+          >
             <i class="fa fa-github-square" aria-hidden="true"></i>
-            <span class="font-staat">@Goomez</span>
+            <label class="font-staat">@Goomez</label>
           </a>
-
-          <a href="https://www.linkedin.com/in/kevin-gomes-a1a488174/" id="linkedin" class="mygreen-text ml-3">
+          <br class="mobile">
+          <a
+            href="https://www.linkedin.com/in/kevin-gomes-a1a488174/"
+            id="linkedin"
+            class="mygreen-text ml-3 social-media"
+          >
             <i class="fa fa-linkedin-square" aria-hidden="true"></i>
-            <span class="font-staat">Kevin Gomes</span>
+            <label class="font-staat">Kevin Gomes</label>
           </a>
         </div>
-      </div>
+      </section>
       <!-- FIM SOBRE -->
+
+      <!-- EDUCACAO -->
+      <section id="educacao" class="container scroll-animate">
+        <div>
+          <p class="h1 title-section font-staat">
+            <i class="fa fa-book mr-1 ml-0" aria-hidden="true"></i>
+            EDUCAÇÃO
+          </p>
+          <p id="text-education" class="texts-inside font-mont text-justify">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
+      </section>
+      <!-- FIM - EDUCACAO -->
+
+      <!-- EXPERIENCIA -->
+      <section id="experiencia" class="container scroll-animate">
+        <div>
+          <p class="h1 title-section font-staat">
+            <i class="fa fa-address-card mr-1 ml-0" aria-hidden="true"></i>
+            EXPERIENCIA
+          </p>
+          <p id="text-xp" class="texts-inside font-mont text-justify">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
+      </section>
+      <!-- FIM - EXPERIENCIA -->
+
+      <!-- HABILIDADES -->
+      <section id="skills" class="container scroll-animate">
+        <div>
+          <p class="h1 title-section font-staat">
+            <i class="fa fa-flash mr-1 ml-0" aria-hidden="true"></i>
+            HABILIDADES
+          </p>
+          <p id="text-skills" class="texts-inside font-mont text-justify">
+            Lorem Ipsum is simply dummy text of the printing and typesetting
+            industry. Lorem Ipsum has been the industry's standard dummy text
+            ever since the 1500s, when an unknown printer took a galley of type
+            and scrambled it to make a type specimen book.
+          </p>
+        </div>
+      </section>
+      <!-- FIM - EXPERIENCIA -->
     </div>
     <!-- END Container -->
+
 
     <!-- Bootstrap 4.5 JS -->
     <script
@@ -107,11 +180,17 @@
       crossorigin="anonymous"
     ></script>
 
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.0/jquery.min.js"></script>
+
     <!-- FontAwesome -->
     <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script
       src="https://kit.fontawesome.com/8dc881c5b9.js"
       crossorigin="anonymous"
     ></script>
+
+    <!-- My App -->
+    <script src="js/app.js"></script>
   </body>
 </html>
