@@ -133,13 +133,10 @@ section {
   font-size: 50px;
 }
 #linkedin {
-  text-decoration-line: none;
+  /* text-decoration-line: none; */
 }
 #github {
-  text-decoration-line: none;
-}
-#redes span {
-  font-size: 55px;
+  /* text-decoration-line: none; */
 }
 #subtitle {
   font-size: 24px !important;
