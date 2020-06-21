@@ -25,17 +25,34 @@
   </head>
   <body>
     <!-- Navbar MOBILE -->
-    <nav id="container-navbar" class="navbar navbar-expand-lg navbar-dark mobile">
+    <nav
+      id="container-navbar"
+      class="navbar navbar-expand-lg navbar-dark mobile"
+    >
       <a class="navbar-brand font-staat" href="#home">MENU</a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNavAltMarkup"
+        aria-controls="navbarNavAltMarkup"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link links-anchors" href="#sobre">SOBRE</a>
-          <a class="nav-item nav-link links-anchors" href="#educacao">EDUCACAO</a>
-          <a class="nav-item nav-link links-anchors" href="#experiencia">experiencia</a>
-          <a class="nav-item nav-link links-anchors" href="#skills">HABILIDADES</a>
+          <a class="nav-item nav-link links-anchors" href="#educacao"
+            >EDUCACAO</a
+          >
+          <a class="nav-item nav-link links-anchors" href="#experiencia"
+            >experiencia</a
+          >
+          <a class="nav-item nav-link links-anchors" href="#skills"
+            >HABILIDADES</a
+          >
         </div>
       </div>
     </nav>
@@ -72,14 +89,16 @@
     <div id="home" class="p-4">
       <div id="names">
         <label id="first-name" class="name-lastname">KEVIN</label>
-        <label id="last-name" class="name-lastname mygreen-text">CERQUEIRA</label>
+        <label id="last-name" class="name-lastname mygreen-text"
+          >CERQUEIRA</label
+        >
       </div>
       <div id="subtitle">
         <label class="h3 text-uppercase mt-0 pl-1 mb-0">
-          Brasileiro, 20 anos. 
+          Brasileiro, 20 anos.
           <!-- <br class="mobile"> -->
           Feira de Santana - BA
-          <br class="mobile">
+          <br class="mobile" />
           <a
             id="email"
             type="mail"
@@ -102,13 +121,13 @@
           <i class="fa fa-github-square" aria-hidden="true"></i>
           <label class="desktop">@KevinCerqueira</label>
         </a>
-        <br class="mobile-min">
+        <br class="mobile-min" />
         <a
           href="https://www.linkedin.com/in/kevincerqueira/"
           id="linkedin"
           class="mygreen-text ml-1 social-media font-staat"
         >
-          <i class="fa fa-linkedin-square " aria-hidden="true"></i>
+          <i class="fa fa-linkedin-square" aria-hidden="true"></i>
           <label class="desktop">Kevin Cerqueira</label>
         </a>
       </div>
@@ -122,16 +141,17 @@
             SOBRE
           </p>
           <p id="text-about" class="texts-inside font-mont text-justify">
-            Sou um desenvolvedor de aplicações Web e Mobile, atualmente tenho 
-            desenvolvido projetos com React JS + Redux e utilizando Node.js como 
-            back-end. Tenho estudado sobre desenvolvimento mobile com o framework 
-            Flutter, e implementando esse conhecimento em projetos pessoais e 
-            profissionais. Também utilizei Laravel 6.X e PHP tanto no front-end 
-            quanto no back-end; no front-end já utilizei e utilizo bastante o 
-            Bootstrap 4, CSS, FontAwesome e SweetAlert; na parte de banco de 
-            dados utilizo MySQL e SQLite com sistemas como PHPMyAdmin e MySQL 
-            Workbench. Também já desenvolvi scripts em Python para Web Scraping 
-            e tenho forte conhecimente e experiência em desenvolvimento Java.
+            Sou um desenvolvedor de aplicações Web e Mobile, atualmente tenho
+            desenvolvido projetos com React JS + Redux e utilizando Node.js no
+            back-end. Tenho estudado sobre desenvolvimento mobile com o
+            framework Flutter, e implementando esse conhecimento em projetos
+            pessoais e profissionais. Também utilizei Laravel 6.X e PHP tanto no
+            front-end quanto no back-end; no front-end já utilizei e utilizo
+            bastante o Bootstrap 4, CSS, FontAwesome e SweetAlert; na parte de
+            banco de dados utilizo MySQL e SQLite com sistemas como PHPMyAdmin e
+            MySQL Workbench. Também já desenvolvi scripts em Python para Web
+            Scraping e tenho forte conhecimente e experiência em desenvolvimento
+            Java.
           </p>
         </div>
       </section>
@@ -139,17 +159,54 @@
 
       <!-- EDUCACAO -->
       <section id="educacao" class="scroll-animate">
-        <div>
-          <p class="h1 title-section font-staat">
-            <i class="fa fa-book mr-1 ml-0" aria-hidden="true"></i>
-            EDUCAÇÃO
+        <p class="h1 title-section font-staat mb-2">
+          <i class="fa fa-graduation-cap mr-1 ml-0" aria-hidden="true"></i>
+          EDUCAÇÃO
+        </p>
+        <div id="educacao-conteudo">
+          <p
+            id="text-education"
+            class="mb-0 texts-inside font-mont text-justify"
+          >
+            <label id="educacao-ecomp" class="mb-0">
+              <i class="fas fa-laptop-code"></i>
+              Engenharia de Computação
+            </label>
           </p>
-          <p id="text-education" class="texts-inside font-mont text-justify">
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry's standard dummy text
-            ever since the 1500s, when an unknown printer took a galley of type
-            and scrambled it to make a type specimen book.
-          </p>
+          <table id="table-educacao">
+            <tr>
+              <td id="line"></td>
+              <td id="td-sobre">
+                <div class="ml-3">
+                  <label class="mb-0 font-staat tags">
+                    <i class="fa fa-circle mr-1" aria-hidden="true"></i>
+                    Superior
+                    <i class="fa fa-circle mr-1 ml-3" aria-hidden="true"></i>
+                    Graduação
+                    <i class="fa fa-circle mr-1 ml-3" aria-hidden="true"></i>
+                    Exatas
+                  </label>
+                  <br />
+                  <label id="educacao-uefs" class="text-uppercase mb-0 mr-3">
+                    <i class="fa fa-university" aria-hidden="true"></i>
+                    UEFS - Universidade Estadual de Feira de Santana
+                  </label>
+                  <br />
+                  <label class="mb-0 mr-3">
+                    <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
+                    MAR/2018
+                    <br />
+                    <label id="calendar-arrow" class="h5">
+                      <i class="fa fa-long-arrow-down" aria-hidden="true"></i>
+                    </label>
+                    <br />
+                    <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
+                    Atualmente
+                  </label>
+                </div>
+              </td>
+            </tr>
+          </table>
         </div>
       </section>
       <!-- FIM - EDUCACAO -->
