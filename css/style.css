@@ -8,22 +8,22 @@
     margin-left: 0% !important;
     align-items: center;
   }
-  .name-lastname {
-    text-align: center;
-    font-size: 75px !important;
-  }
   #names {
     text-align: center;
+    height: 70px;
+  }
+  #names label{
+    text-align: center;
+    font-size: 60px !important;
   }
   #subtitle {
     text-align: center !important;
   }
+  #subtitle label{
+    font-size: 25px !important;
+  }
   #redes {
     text-align: center;
-  }
-  .social-media {
-    margin: 0% !important;
-    font-size: 30px;
   }
   .links-anchors{
     padding: 0%;
@@ -35,10 +35,31 @@
   #container-navbar .navbar-brand{
     color: #cecdcd;
   }
+  #redes a{
+    font-size: 50px !important;
+    margin-left: 10px !important;
+    margin-right: 10px !important;
+  }
 }
-@media only screen and (max-width: 387px) {
-  .social-media {
-    font-size: 23px !important;
+@media only screen and (max-width: 400px) {
+  #names {
+    text-align: center;
+    height: 60px;
+  }
+  #names label{
+    text-align: center;
+    font-size: 50px !important;
+  }
+  #subtitle label{
+    font-size: 20px !important;
+  }
+}
+@media only screen and (max-width: 345px) {
+  #names label{
+    font-size: 45px !important;
+  }
+  #subtitle label{
+    font-size: 18px !important;
   }
 }
 @media only screen and (min-width: 285px) {
@@ -101,7 +122,7 @@ section {
 }
 .texts-inside {
   color: #d0d3d3 !important;
-  font-size: 24px !important;
+  font-size: 21px !important;
 }
 .links-anchors {
   text-decoration: none;
@@ -111,6 +132,11 @@ section {
 }
 .links-anchors:focus{
   color: #00764c !important;
+}
+.name-lastname {
+  font-family: Staatliches;
+  font-size: 119px;
+  height: 80px;
 }
 #avatar {
   margin-top: 16%;
@@ -124,21 +150,16 @@ section {
   font-family: Staatliches;
   height: 100% !important;
 }
-.name-lastname {
-  font-family: Staatliches;
-  font-size: 119px;
-  height: 80px;
-}
 #redes {
-  font-size: 50px;
-}
-#linkedin {
-  /* text-decoration-line: none; */
-}
-#github {
-  /* text-decoration-line: none; */
+  font-size: 47px;
 }
 #subtitle {
   font-size: 24px !important;
   font-family: "Bebas Neue";
+}
+#card-github{
+  width: 10% !important;
+}
+#sobre{
+  padding-top: 20px !important;
 }
