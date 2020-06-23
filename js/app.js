@@ -13,10 +13,10 @@ $(document).ready(function () {
           '<strong>construção</strong>! ' +
           'Então é possível encontrar resquícios '+
           'expostos da programação.',
-        showCloseButton: true,
+        showCloseButton: false,
         focusConfirm: false,
         confirmButtonText:
           '<i class="fa fa-thumbs-up"></i> Entendi!',
-        confirmButtonAriaLabel: 'Thumbs up, great!'
+        confirmButtonAriaLabel: ''
       });
 });
