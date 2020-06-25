@@ -46,7 +46,7 @@
   }
 }
 @media only screen and (max-width: 511px) {
-  #educacao-ecomp{
+  #educacao-ecomp {
     font-size: 20px !important;
   }
 }
@@ -72,13 +72,8 @@
   }
 }
 @media only screen and (max-width: 368px) {
-  #educacao-ecomp{
+  #educacao-ecomp {
     font-size: 19px !important;
-  }
-}
-@media only screen and (min-width: 285px) {
-  .mobile-min {
-    display: none;
   }
 }
 @media only screen and (min-width: 1000px) {
@@ -86,6 +81,12 @@
     display: none !important;
   }
 }
+@media only screen and (min-width: 285px) {
+  .mobile-min {
+    display: none;
+  }
+}
+
 
 body {
   color: #d0d3d3;
@@ -100,7 +101,6 @@ section {
   padding-top: 30px;
   padding-bottom: 30px;
 }
-
 .horizontal {
   align-items: center;
   display: flex;
@@ -113,31 +113,18 @@ section {
 .font-staat {
   font-family: Staatliches;
 }
-.myyellow-background {
-  background-color: #ffdf31 !important;
-}
-.mygreen-background {
-  background-color: #00764c !important;
-}
-.mygrey-background {
-  background-color: #d0d3d3 !important;
-}
 .myyellow-text {
   color: #ffdf31 !important;
 }
 .mygreen-text {
   color: #00764c !important;
 }
-.mygrey-text {
-  color: #d0d3d3 !important;
-}
-.radius-circle {
-  border-bottom-left-radius: 200px !important;
-}
 .texts-inside {
   color: #d0d3d3 !important;
   font-size: 21px;
 }
+
+/* NAVBAR */
 .links-anchors {
   text-decoration: none;
   font-size: 40px;
@@ -152,18 +139,13 @@ section {
   font-size: 119px;
   height: 80px;
 }
-.tags {
-  font-size: 18px;
-  color: #505252;
-}
-.tags i {
-  font-size: 14px !important;
-}
 #avatar {
   margin-top: 16%;
   border: solid 7px;
   width: 70% !important;
 }
+
+/* Section : Home/Topo */
 #home {
   margin-left: 25%;
 }
@@ -178,16 +160,23 @@ section {
   font-size: 24px !important;
   font-family: "Bebas Neue";
 }
-#card-github {
-  width: 10% !important;
-}
+
+/* Section : Sobre */
 #sobre {
   padding-top: 20px !important;
   padding-bottom: 20px !important;
 }
+
+/* Section : Educação */
+.tags {
+  font-size: 18px;
+  color: #505252;
+}
+.tags i {
+  font-size: 14px !important;
+}
 #educacao-ecomp {
   font-size: 30px;
-  /* font-weight: 600; */
   height: 43px;
 }
 #educacao-ecomp i {
@@ -201,9 +190,10 @@ section {
   margin-left: 3px !important;
   margin-right: 6px !important;
 }
-#line{
-  background: #FFFFFF !important;
+#line {
+  background: #ffffff !important;
 }
-#table-educacao{
+#table-educacao {
   margin-left: 14px !important;
 }
+
