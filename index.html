@@ -44,15 +44,18 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link links-anchors" href="#sobre">SOBRE</a>
-          <a class="nav-item nav-link links-anchors" href="#educacao"
-            >EDUCACAO</a
-          >
-          <a class="nav-item nav-link links-anchors" href="#experiencia"
-            >EXPERIÊNCIA</a
-          >
-          <a class="nav-item nav-link links-anchors" href="#skills"
-            >HABILIDADES</a
-          >
+          <a class="nav-item nav-link links-anchors" href="#educacao">
+            EDUCACAO
+          </a>
+          <!-- <a class="nav-item nav-link links-anchors" href="#experiencia">
+            EXPERIÊNCIA
+          </a> -->
+          <a class="nav-item nav-link links-anchors" href="#skills">
+            HABILIDADES
+          </a>
+          <a class="nav-item nav-link links-anchors" href="#outras-informacoes">
+            OUTRAS INFORMAÇÕES
+          </a>
         </div>
       </div>
     </nav>
@@ -75,11 +78,16 @@
         <div class="col mt-4">
           <a class="links-anchors" href="#educacao">Educação</a>
         </div>
-        <div class="col mt-4">
+        <!-- <div class="col mt-4">
           <a class="links-anchors" href="#experiencia">Experiência</a>
-        </div>
+        </div> -->
         <div class="col mt-4">
           <a class="links-anchors" href="#skills">Habilidades</a>
+        </div>
+        <div class="col mt-4">
+          <a class="links-anchors" href="#outras-informacoes"
+            >Outras Informações</a
+          >
         </div>
       </div>
     </nav>
@@ -141,17 +149,17 @@
             SOBRE
           </p>
           <p id="text-about" class="texts-inside font-mont text-justify">
-            &nbsp;&nbsp;&nbsp;&nbsp;Sou um desenvolvedor de aplicações Web e Mobile, atualmente tenho
-            desenvolvido projetos com React JS e utilizando Node.js no
-            back-end. Tenho estudado sobre desenvolvimento mobile com o
-            framework Flutter, e implementando esse conhecimento em projetos
-            pessoais e profissionais. Também utilizei Laravel 6.X e PHP tanto no
-            front-end quanto no back-end; no front-end já utilizei e utilizo
-            bastante o Bootstrap 4, CSS, FontAwesome e SweetAlert; na parte de
-            banco de dados utilizo MySQL e SQLite com sistemas como PHPMyAdmin e
-            MySQL Workbench. Também já desenvolvi scripts em Python para Web
-            Scraping e tenho forte conhecimente e experiência em desenvolvimento
-            Java.
+            &nbsp;&nbsp;&nbsp;&nbsp;Sou um desenvolvedor de aplicações Web e
+            Mobile, atualmente tenho desenvolvido projetos com React JS e
+            utilizando Node.js no back-end. Tenho estudado sobre desenvolvimento
+            mobile com o framework Flutter, e implementando esse conhecimento em
+            projetos pessoais e profissionais. Também utilizei Laravel 6.X e PHP
+            tanto no front-end quanto no back-end; no front-end já utilizei e
+            utilizo bastante o Bootstrap 4, CSS, FontAwesome e SweetAlert; na
+            parte de banco de dados utilizo MySQL e SQLite com sistemas como
+            PHPMyAdmin e MySQL Workbench. Também já desenvolvi scripts em Python
+            para Web Scraping e tenho forte conhecimente e experiência em
+            desenvolvimento Java.
           </p>
         </div>
       </section>
@@ -163,17 +171,17 @@
           <i class="fa fa-graduation-cap mr-1 ml-0" aria-hidden="true"></i>
           EDUCAÇÃO
         </p>
-        <div id="educacao-conteudo">
+        <div id="educacao-conteudo" class="subtopicos">
           <p
             id="text-education"
             class="mb-0 texts-inside font-mont text-justify"
           >
-            <label id="educacao-ecomp" class="mb-0">
+            <label class="mb-0 subtopicos-name">
               <i class="fas fa-laptop-code"></i>
               Engenharia de Computação
             </label>
           </p>
-          <table id="table-educacao">
+          <table id="table-educacao" class="subtopicos-table">
             <tr>
               <td id="line"></td>
               <td id="td-sobre">
@@ -227,17 +235,187 @@
 
       <!-- HABILIDADES -->
       <section id="skills" class="scroll-animate">
+        <p class="h1 title-section font-staat">
+          <i class="fa fa-flash mr-1 ml-0" aria-hidden="true"></i>
+          HABILIDADES
+        </p>
+
+        <div class="subtopicos">
+          <p class="mb-0 texts-inside font-mont">
+            <label class="subtopicos-name">
+              <i class="fa fa-desktop" aria-hidden="true"></i>
+              Desenvolvimento WEB
+            </label>
+          </p>
+          <table class="subtopicos-table mt-1">
+            <tr>
+              <td class="bg-white ml-3"></td>
+              <td>
+                <div class="ml-3">
+                  <p class="mb-0 text-uppercase mb-1 sub-subtopico">
+                    - Full-Stack
+                    <i class="fa fa-fire" aria-hidden="true"></i>
+                  </p>
+                  <p class="ml-3 mb-2">
+                    <label id="back-laravel" class="skills-icons">
+                      Laravel 5/6.X
+                    </label>
+                    <label id="back-php" class="skills-icons">
+                      PHP7
+                    </label>
+                    <label id="back-js" class="skills-icons">
+                      JavaScript ES6
+                    </label>
+                  </p>
+                  <p class="mb-0 text-uppercase mb-1 sub-subtopico">
+                    - Front-End
+                    <i class="fa fa-picture-o" aria-hidden="true"></i>
+                  </p>
+                  <p class="ml-3 mb-2">
+                    <label id="back-html" class="skills-icons">
+                      HTML
+                    </label>
+                    <label id="back-css" class="skills-icons">
+                      CSS
+                    </label>
+                    <label id="back-bootstrap" class="skills-icons">
+                      Bootstrap
+                    </label>
+                    <label id="back-react" class="skills-icons">
+                      React JS
+                    </label>
+                  </p>
+                  <p class="mb-0 text-uppercase mb-1 sub-subtopico">
+                    - Back-End
+                    <i class="fa fa-gears" aria-hidden="true"></i>
+                  </p>
+                  <p class="ml-3 mb-2">
+                    <label id="back-node" class="skills-icons">
+                      Node.js
+                    </label>
+                  </p>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <p class="mb-0 mt-0 texts-inside font-mont">
+            <label class="subtopicos-name">
+              <i
+                class="fa fa-mobile ml-2"
+                aria-hidden="true"
+                style="font-size: 24px;"
+              ></i>
+              Desenvolvimento Mobile
+            </label>
+          </p>
+          <table class="subtopicos-table mt-1">
+            <tr>
+              <td class="bg-white ml-3"></td>
+              <td>
+                <div class="ml-3 mt-1">
+                  <p class="ml-3 mb-2">
+                    <label id="back-flutter" class="skills-icons">
+                      Flutter
+                    </label>
+                  </p>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <p class="mb-0 mt-0 texts-inside font-mont">
+            <label class="subtopicos-name">
+              <i class="fa fa-database ml-1" aria-hidden="true"></i>
+              Banco de Dados
+            </label>
+          </p>
+          <table class="subtopicos-table mt-1">
+            <tr>
+              <td class="bg-white ml-3"></td>
+              <td>
+                <div class="ml-3 mt-1">
+                  <p class="ml-3 mb-2">
+                    <label id="back-mysql" class="skills-icons">
+                      MySQL
+                    </label>
+                    <label id="back-sqlite" class="skills-icons">
+                      SQLite
+                    </label>
+                  </p>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <p class="mb-0 mt-0 texts-inside font-mont">
+            <label class="subtopicos-name">
+              <i class="fa fa-language" aria-hidden="true"></i>
+              Outras linguagens
+            </label>
+          </p>
+          <table class="subtopicos-table mt-1">
+            <tr>
+              <td class="bg-white ml-3"></td>
+              <td>
+                <div class="ml-3 mt-1">
+                  <p class="ml-3 mb-2">
+                    <label id="back-python" class="skills-icons">
+                      Python
+                    </label>
+                    <label id="back-java" class="skills-icons">
+                      Java
+                    </label>
+                    <label id="back-c" class="skills-icons">
+                      C
+                    </label>
+                  </p>
+                </div>
+              </td>
+            </tr>
+          </table>
+          <p class="mb-0 mt-0 texts-inside font-mont">
+            <label class="subtopicos-name">
+              <i class="fa fa-terminal" aria-hidden="true"></i>
+              Sistemas
+            </label>
+          </p>
+          <table class="subtopicos-table mt-1">
+            <tr>
+              <td class="bg-white ml-3"></td>
+              <td>
+                <div class="ml-3 mt-1">
+                  <p class="ml-3 mb-2">
+                    <label id="back-git" class="skills-icons">
+                      Git
+                    </label>
+                    <label id="back-github" class="skills-icons">
+                      GitHub
+                    </label>
+                    <label id="back-latex" class="skills-icons">
+                      LaTeX
+                    </label>
+                    <label id="back-ps" class="skills-icons">
+                      Photoshop
+                    </label>
+                  </p>
+                </div>
+              </td>
+            </tr>
+          </table>
+
+        </div>
+      </section>
+      <!-- FIM - EXPERIENCIA -->
+
+      <section id="outras-informacoes" class="scroll-animate">
         <div>
           <p class="h1 title-section font-staat">
-            <i class="fa fa-flash mr-1 ml-0" aria-hidden="true"></i>
-            HABILIDADES
+            <i class="fa fa-info-circle mr-1 ml-0" aria-hidden="true"></i>
+            Outras Informações
           </p>
-          <p id="text-skills" class="texts-inside font-mont text-justify">
+          <p id="text-xp" class="texts-inside font-mont text-justify">
             <label class="myyellow-text">EM BREVE...</label>
           </p>
         </div>
       </section>
-      <!-- FIM - EXPERIENCIA -->
     </div>
     <!-- END Container -->
 

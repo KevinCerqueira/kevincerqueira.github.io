@@ -11,8 +11,8 @@ $(document).ready(function () {
         html:
           'Este site ainda está em fase de ' +
           '<strong>construção</strong>! ' +
-          'Então é possível encontrar resquícios '+
-          'expostos da programação.',
+          'Então é possível encontrar algumas '+
+          'coisas que ainda não estão 100% desenvolvidas.',
         showCloseButton: false,
         focusConfirm: false,
         confirmButtonText:
