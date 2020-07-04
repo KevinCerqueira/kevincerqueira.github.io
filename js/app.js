@@ -4,19 +4,19 @@ $('a').click(function() {
     }, 900);
     return false;
 });
-$(document).ready(function () {
-    Swal.fire({
-        title: '<strong>ATENÇÃO</strong>',
-        icon: 'warning',
-        html:
-          'Este site ainda está em fase de ' +
-          '<strong>construção</strong>! ' +
-          'Então é possível encontrar algumas '+
-          'coisas que ainda não estão 100% desenvolvidas.',
-        showCloseButton: false,
-        focusConfirm: false,
-        confirmButtonText:
-          '<i class="fa fa-thumbs-up"></i> Entendi!',
-        confirmButtonAriaLabel: ''
-      });
-});
+// $(document).ready(function () {
+//     Swal.fire({
+//         title: '<strong>ATENÇÃO</strong>',
+//         icon: 'warning',
+//         html:
+//           'Este site ainda está em fase de ' +
+//           '<strong>construção</strong>! ' +
+//           'Então é possível encontrar algumas '+
+//           'coisas que ainda não estão 100% desenvolvidas.',
+//         showCloseButton: false,
+//         focusConfirm: false,
+//         confirmButtonText:
+//           '<i class="fa fa-thumbs-up"></i> Entendi!',
+//         confirmButtonAriaLabel: ''
+//       });
+// });
