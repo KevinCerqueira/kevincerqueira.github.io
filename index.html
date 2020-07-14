@@ -16,11 +16,7 @@
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="css/style.css" />
-    <link
-      rel="shortcut icon"
-      href="img/mylogo.png"
-      type="image/x-icon"
-    />
+    <link rel="shortcut icon" href="img/mylogo.png" type="image/x-icon" />
     <title>Kevin Cerqueira</title>
   </head>
   <body>
@@ -44,18 +40,18 @@
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
           <a class="nav-item nav-link links-anchors" href="#sobre">SOBRE</a>
+          <a class="nav-item nav-link links-anchors" href="#experiencia">
+            EXPERIÊNCIA
+          </a>
           <a class="nav-item nav-link links-anchors" href="#educacao">
             EDUCACAO
           </a>
-          <!-- <a class="nav-item nav-link links-anchors" href="#experiencia">
-            EXPERIÊNCIA
-          </a> -->
           <a class="nav-item nav-link links-anchors" href="#skills">
             HABILIDADES
           </a>
-          <a class="nav-item nav-link links-anchors" href="#outras-informacoes">
+          <!-- <a class="nav-item nav-link links-anchors" href="#outras-informacoes">
             OUTRAS INFORMAÇÕES
-          </a>
+          </a> -->
         </div>
       </div>
     </nav>
@@ -76,19 +72,19 @@
           <a class="links-anchors" href="#home">Sobre</a>
         </div>
         <div class="col mt-4">
+          <a class="links-anchors" href="#experiencia">Experiência</a>
+        </div>
+        <div class="col mt-4">
           <a class="links-anchors" href="#educacao">Educação</a>
         </div>
-        <!-- <div class="col mt-4">
-          <a class="links-anchors" href="#experiencia">Experiência</a>
-        </div> -->
         <div class="col mt-4">
           <a class="links-anchors" href="#skills">Habilidades</a>
         </div>
-        <div class="col mt-4">
+        <!-- <div class="col mt-4">
           <a class="links-anchors" href="#outras-informacoes"
             >Outras Informações</a
           >
-        </div>
+        </div> -->
       </div>
     </nav>
     <!-- END Navbar DESKTOP -->
@@ -106,7 +102,7 @@
       </div>
       <div id="subtitle">
         <label class="text-uppercase mt-0 pl-1 mb-0">
-          Brasileiro, 20 anos.  Feira de Santana - BA
+          Brasileiro, 20 anos. Feira de Santana - BA
           <br class="mobile" />
           <a
             id="email"
@@ -166,6 +162,63 @@
       </section>
       <!-- FIM SOBRE -->
 
+            <!-- EXPERIENCIA -->
+            <section id="experiencia" class="scroll-animate">
+              <p class="h1 title-section font-staat mb-2">
+                <i class="fa fa-address-card mr-1 ml-0" aria-hidden="true"></i>
+                Experiência
+              </p>
+              <div id="experiencia-conteudo" class="subtopicos">
+                <p
+                  id="text-education"
+                  class="mb-0 texts-inside font-mont text-justify"
+                >
+                  <label class="mb-0 subtopicos-name">
+                    <i class="fas fa-code"></i>
+                    Analista de sistema
+                  </label>
+                </p>
+                <table id="table-experiencia" class="subtopicos-table mt-1">
+                  <tr>
+                    <td id="line"></td>
+                    <td id="td-sobre">
+                      <div class="ml-3">
+                        <label class="mb-0 font-staat tags">
+                          <i class="fa fa-circle mr-1" aria-hidden="true"></i>
+                          Laravel
+                          <i class="fa fa-circle mr-1 ml-3" aria-hidden="true"></i>
+                          PHP
+                          <i class="fa fa-circle mr-1 ml-3" aria-hidden="true"></i>
+                          Oracle
+                        </label>
+                        <br />
+                        <label id="experiencia-emprego" class="mb-0 mr-3 table-instituicao">
+                          <i class="fa fa-building" aria-hidden="true"></i>
+                          <a href="http://www.softwaredata.com.br/website/index.asp" class="texts-inside">
+                            SoftwareDATA - LTDA
+                            <i class="fa fa-link" aria-hidden="true" style="font-size: 13px;"></i>
+                          </a>
+                        </label>
+                        <br />
+                        <label class="mb-0 mr-3">
+                          <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
+                          JUL/2020
+                          <br />
+                          <label id="calendar-arrow" class="h5">
+                            <i class="fa fa-long-arrow-down" aria-hidden="true"></i>
+                          </label>
+                          <br />
+                          <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
+                          Atualmente
+                        </label>
+                      </div>
+                    </td>
+                  </tr>
+                </table>
+              </div>
+            </section>
+            <!-- FIM - EXPERIENCIA -->
+
       <!-- EDUCACAO -->
       <section id="educacao" class="scroll-animate">
         <p class="h1 title-section font-staat mb-2">
@@ -182,7 +235,7 @@
               Engenharia de Computação
             </label>
           </p>
-          <table id="table-educacao" class="subtopicos-table">
+          <table id="table-educacao" class="subtopicos-table mt-1">
             <tr>
               <td id="line"></td>
               <td id="td-sobre">
@@ -198,7 +251,9 @@
                   <br />
                   <label id="educacao-uefs" class="text-uppercase mb-0 mr-3">
                     <i class="fa fa-university" aria-hidden="true"></i>
-                    UEFS - Universidade Estadual de Feira de Santana
+                    <a href="http://www.uefs.br/" class="texts-inside">UEFS - Universidade Estadual de Feira de Santana
+                      <i class="fa fa-link" aria-hidden="true"></i>
+                    </a>
                   </label>
                   <br />
                   <label class="mb-0 mr-3">
@@ -219,20 +274,6 @@
         </div>
       </section>
       <!-- FIM - EDUCACAO -->
-
-      <!-- EXPERIENCIA -->
-      <!-- <section id="experiencia" class="scroll-animate">
-        <div>
-          <p class="h1 title-section font-staat">
-            <i class="fa fa-address-card mr-1 ml-0" aria-hidden="true"></i>
-            EXPERIENCIA
-          </p>
-          <p id="text-xp" class="texts-inside font-mont text-justify">
-            <label class="myyellow-text">EM BREVE...</label>
-          </p>
-        </div>
-      </section> -->
-      <!-- FIM - EXPERIENCIA -->
 
       <!-- HABILIDADES -->
       <section id="skills" class="scroll-animate">
@@ -338,6 +379,9 @@
                     <label id="back-mysql" class="skills-icons">
                       MySQL
                     </label>
+                    <label id="back-oracle" class="skills-icons">
+                      Oracle
+                    </label>
                     <label id="back-sqlite" class="skills-icons">
                       SQLite
                     </label>
@@ -405,7 +449,8 @@
       </section>
       <!-- FIM - EXPERIENCIA -->
 
-      <section id="outras-informacoes" class="scroll-animate">
+      <!-- OUTRAS INFORMAÇÕES -->
+      <!-- <section id="outras-informacoes" class="scroll-animate">
         <div>
           <p class="h1 title-section font-staat">
             <i class="fa fa-info-circle mr-1 ml-0" aria-hidden="true"></i>
@@ -415,7 +460,9 @@
             <label class="myyellow-text">EM BREVE...</label>
           </p>
         </div>
-      </section>
+      </section> -->
+      <!-- FIM - OUTRAS INFORMAÇÔES -->
+      
     </div>
     <!-- END Container -->
 
