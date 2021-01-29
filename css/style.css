@@ -319,6 +319,18 @@ section {
 #back-c:hover {
   background-color: #6396cd;
 }
+#meto-waterfall {
+  background-color: #19689E4d;
+}
+#meto-waterfall:hover {
+  background-color: #19689E;
+}
+#meto-scrum {
+  background-color: #772C2A4d;
+}
+#meto-scrum:hover {
+  background-color: #772C2A;
+}
 #back-git {
   background-color: #f54d274d;
 }
