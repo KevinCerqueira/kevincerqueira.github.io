@@ -289,17 +289,17 @@ section {
 #back-mysql:hover {
   background-color: #00758f;
 }
-#back-sqlite {
-  background-color: #0e7ec94d;
+#back-mariadb {
+  background-color: #BA72574d;
+}
+#back-mariadb:hover {
+  background-color: #BA7257;
 }
 #back-oracle {
   background-color: #F800004d;
 }
 #back-oracle:hover {
   background-color: #F80000;
-}
-#back-sqlite:hover {
-  background-color: #0e7ec9;
 }
 #back-python {
   background-color: #1e415f4d;
@@ -343,11 +343,11 @@ section {
 #back-github:hover {
   background-color: #24292e;
 }
-#back-latex {
-  background-color: #0080804d;
+#back-docker {
+  background-color: #2391E64d;
 }
-#back-latex:hover {
-  background-color: #008080;
+#back-docker:hover {
+  background-color: #2391E6;
 }
 #back-ps {
   background-color: #1804654d;
