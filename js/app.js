@@ -1,4 +1,4 @@
-window.location.href = "http://kevincerqueira.com/";
+window.location.href = "https://kevincerqueira.com/";
 $('a').click(function() {
     $('html, body').animate({
         scrollTop: $( $.attr(this, 'href') ).offset().top
