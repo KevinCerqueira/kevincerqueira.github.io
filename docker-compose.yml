@@ -1,0 +1,16 @@
+version: "3"
+services:
+  php-apache:
+    container_name: korduroy
+    build: ./docker
+    ports:
+      - "8000:80"
+    volumes:
+      - ./src:/var/www/html
+      - ./docker/config/jit.ini:/usr/local/etc/php/conf.d/jit.ini
+      - ./docker/config/timezone.ini:/usr/local/etc/php/conf.d/timezone.ini
+  adminer:
+    image: adminer
+    restart: always
+    ports:
+      - 8080:8080
