@@ -1,9 +1,12 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
-@media only screen and (max-width: 999px) {
+@media only screen and (max-width: 1279px) {
   section {
     padding-top: 20px !important;
     padding-bottom: 20px !important;
+  }
+  .p-right {
+    padding-right: 0% !important;
   }
   .desktop {
     display: none !important;
@@ -37,7 +40,7 @@
     text-align: center;
   }
   #container-navbar .navbar-brand {
-    color: #cecdcd;
+    color: #eeeeee;
   }
   #redes a {
     font-size: 50px !important;
@@ -91,17 +94,20 @@
 }
 
 body {
-  color: #d0d3d3;
-  background: rgb(0, 12, 8);
+  color: #f0f0f0;
+  background: rgb(0, 10, 12);
   background: linear-gradient(
     90deg,
-    rgba(0, 18, 12, 1) 20%,
+    rgb(0, 40, 48) 20%,
     rgba(0, 0, 0, 1) 100%
   );
 }
 section {
   padding-top: 30px;
   padding-bottom: 30px;
+}
+.p-right {
+  padding-right: 5%;
 }
 .horizontal {
   align-items: center;
@@ -119,10 +125,10 @@ section {
   color: #ffdf31 !important;
 }
 .mygreen-text {
-  color: #00764c !important;
+  color: #0ea7bb !important;
 }
 .texts-inside {
-  color: #d0d3d3 !important;
+  color: #e9e9e9 !important;
   font-size: 21px;
 }
 .subtopicos-name {
@@ -143,15 +149,15 @@ section {
 .links-anchors {
   text-decoration: none;
   font-size: 40px;
-  color: #cecdcd !important;
+  color: #eeeeee !important;
   font-family: "Bebas Neue";
 }
 .links-anchors:focus {
-  color: #00764c !important;
+  color: #005e76 !important;
 }
 .name-lastname {
   font-family: Staatliches;
-  font-size: 119px;
+  font-size: 151px;
   height: 119px;
 }
 #avatar {
@@ -169,10 +175,10 @@ section {
   height: 100% !important;
 }
 #redes {
-  font-size: 47px;
+  font-size: 59px;
 }
 #subtitle {
-  font-size: 30px !important;
+  font-size: 37.9px !important;
   font-family: "Bebas Neue";
 }
 #email {
@@ -188,7 +194,7 @@ section {
 /* Section : Educação */
 .tags {
   font-size: 20px;
-  color: #505252;
+  color: #b2b5b5;
 }
 .tags i {
   font-size: 14px !important;
@@ -272,10 +278,10 @@ section {
   background-color: #026e00;
 }
 #back-ionic {
-  background-color: #3880FF4d;
+  background-color: #3880ff4d;
 }
 #back-ionic:hover {
-  background-color: #3880FF;
+  background-color: #3880ff;
 }
 #back-flutter {
   background-color: #46d1fd4d;
@@ -290,16 +296,22 @@ section {
   background-color: #00758f;
 }
 #back-mariadb {
-  background-color: #BA72574d;
+  background-color: #ba72574d;
 }
 #back-mariadb:hover {
-  background-color: #BA7257;
+  background-color: #ba7257;
+}
+#back-mongodb {
+  background-color: #4293504d;
+}
+#back-mongodb:hover {
+  background-color: #429350;
 }
 #back-oracle {
-  background-color: #F800004d;
+  background-color: #f800004d;
 }
 #back-oracle:hover {
-  background-color: #F80000;
+  background-color: #f80000;
 }
 #back-python {
   background-color: #1e415f4d;
@@ -320,16 +332,16 @@ section {
   background-color: #6396cd;
 }
 #meto-kanban {
-  background-color: #19689E4d;
+  background-color: #19689e4d;
 }
 #meto-kanban:hover {
-  background-color: #19689E;
+  background-color: #19689e;
 }
 #meto-scrum {
-  background-color: #772C2A4d;
+  background-color: #772c2a4d;
 }
 #meto-scrum:hover {
-  background-color: #772C2A;
+  background-color: #772c2a;
 }
 #back-git {
   background-color: #f54d274d;
@@ -344,14 +356,111 @@ section {
   background-color: #24292e;
 }
 #back-docker {
-  background-color: #2391E64d;
+  background-color: #2391e64d;
 }
 #back-docker:hover {
-  background-color: #2391E6;
+  background-color: #2391e6;
 }
 #back-ps {
   background-color: #1804654d;
 }
 #back-ps:hover {
   background-color: #180465;
+}
+
+#back-kotlin {
+	background-color: #7F52FF4d;
+  }
+  #back-kotlin:hover {
+	background-color: #7F52FF;
+  }
+  #back-postgresql {
+	background-color: #3367914d;
+  }
+  #back-postgresql:hover {
+	background-color: #336791;
+  }
+  #back-datadog {
+	background-color: #632CA64d;
+  }
+  #back-datadog:hover {
+	background-color: #632CA6;
+  }
+  #back-argocd {
+	background-color: #EF5B5B4d;
+  }
+  #back-argocd:hover {
+	background-color: #EF5B5B;
+  }
+  #back-github-actions {
+	background-color: #2088FF4d;
+  }
+  #back-github-actions:hover {
+	background-color: #2088FF;
+  }
+  @import url("https://fonts.googleapis.com/css2?family=Montserrat&family=Staatliches&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap");
+
+/* Adicionando estilos para as novas habilidades */
+#back-kotlin {
+  background-color: #7F52FF4d;
+}
+#back-kotlin:hover {
+  background-color: #7F52FF;
+}
+
+#back-postgresql {
+  background-color: #3367914d;
+}
+#back-postgresql:hover {
+  background-color: #336791;
+}
+
+#back-bigquery {
+  background-color: #4285F44d;
+}
+#back-bigquery:hover {
+  background-color: #4285F4;
+}
+
+#back-databricks {
+  background-color: #FF36214d;
+}
+#back-databricks:hover {
+  background-color: #FF3621;
+}
+
+#back-typescript {
+  background-color: #3178C64d;
+}
+#back-typescript:hover {
+  background-color: #3178C6;
+}
+
+#back-springboot {
+  background-color: #6DB33F4d;
+}
+#back-springboot:hover {
+  background-color: #6DB33F;
+}
+
+#back-aws {
+  background-color: #FF99004d;
+}
+#back-aws:hover {
+  background-color: #FF9900;
+}
+
+#back-gcp {
+  background-color: #34A8534d;
+}
+#back-gcp:hover {
+  background-color: #34A853;
+}
+
+#back-restapi {
+  background-color: #E44D264d;
+}
+#back-restapi:hover {
+  background-color: #E44D26;
 }

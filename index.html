@@ -1,7 +1,8 @@
 <!DOCTYPE html>
 <html lang="pt-br">
-  <head>
-    <meta charset="UTF-8" />
+  <head><meta charset="utf-8">
+    
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- Bootstrap 4.5 CSS -->
     <link
@@ -69,7 +70,7 @@
       />
       <div id="anchors" class="p-3 mt-2 h3">
         <div class="col mt-3">
-          <a class="links-anchors" href="#home">Sobre</a>
+          <a class="links-anchors" href="#sobre">Sobre</a>
         </div>
         <div class="col mt-4">
           <a class="links-anchors" href="#experiencia">Experiência</a>
@@ -100,13 +101,13 @@
       </div>
       <div id="subtitle">
         <label class="text-uppercase mt-0 pl-1 mb-0">
-          Brasileiro, 21 anos. Bahia, Brasil.
+          Brasileiro, 25 anos. Bahia, Brasil.
           <br class="mobile" />
           <a
             id="email"
             type="mail"
             class="mygreen-text"
-            href="mailto:kevincerqueira.dev@gmail.com"
+            href="mailto:contato@kevincerqueira.com"
           >
             <i class="fa fa-envelope mygreen-text" aria-hidden="true"></i>
             kevincerqueira.dev@gmail.com
@@ -138,21 +139,27 @@
 
       <!-- SOBRE -->
       <section id="sobre" class="scroll-animate">
-        <div>
+        <div class="p-right">
           <p class="h1 title-section font-staat">
             <i class="fa fa-info-circle mr-1 ml-0" aria-hidden="true"></i>
             SOBRE
           </p>
           <p id="text-about" class="texts-inside font-mont text-justify">
-            &nbsp;&nbsp;&nbsp;&nbsp; Sou um desenvolvedor full stack de aplicações Web e Mobile, 
-            atualmente tenho desenvolvido grandes projetos com Laravel/PHP auxiliado com Docker. 
-            Também já trabalhei e trabalho com React e PHP quando se trata de front-end e back-end 
-            respectivamente; no front-end faço bastante o uso do Bootstrap, CSS (utilizando FlexBox 
-            sempre que possível), JQuery e Ajax; na parte de banco de dados atualmente tenho trabalho 
-            com MariaDB, mas já trabalhei com Oracle e com MySQL. Além disso, estudo sobre desenvolvimento
-            mobile com o framework Flutter, e implemento esse conhecimento em projetos pessoais. Também 
-            já desenvolvi scripts de Web Scraping em Python e tenho forte conhecimento e experiência em 
-            desenvolvimento Java tanto para desktop quanto para Web.
+            &nbsp;&nbsp;&nbsp;&nbsp; Oi, eu sou o Kevin! Sou formado em
+            Engenharia de Computação pela Universidade Estadual de Feira de
+            Santana (UEFS) e atuo como Engenheiro de Software Pleno. Atualmente,
+            meu foco é o desenvolvimento de funcionalidades financeiras na Loft,
+            utilizando principalmente Kotlin, e mantendo sistemas em Laravel,
+            PHP e JavaScript. Tenho experiência em criar interfaces responsivas
+            com Bootstrap e FlexBox, além de ter trabalhado com React no
+            front-end. No back-end, além do que mencionei anteriormente, já
+            trabalhei com Node.js e Java. Também lido diariamente com scripts em
+            Python, principalmente em casos de Web Scraping e IoT. Sobre banco
+            de dados, meu trabalho atual envolve PostgreSQL, mas tenho sólida
+            experiência com Oracle, MySQL/MariaDB e MongoDB. Na infraestrutura,
+            atuo no dia a dia com Docker, AWS e CI/CD com GitHub Actions. E se
+            tratando de monitoramento e observabilidade, utilizo Datadog e
+            ArgoCD.
           </p>
         </div>
       </section>
@@ -165,14 +172,85 @@
           Experiência
         </p>
         <div id="experiencia-conteudo" class="subtopicos">
-          <div id="credpago">
+          <div id="loft">
             <p
               id="text-education"
               class="mb-0 texts-inside font-mont text-justify"
             >
               <label class="mb-0 subtopicos-name">
-                <i class="fa fa-fire ml-1" aria-hidden="true"></i>
-                Full Stack Developer
+                <i class="fa fa-gears ml-1" aria-hidden="true"></i>
+                Engenheiro de Software
+              </label>
+            </p>
+            <table id="table-experiencia" class="subtopicos-table mt-1">
+              <tr>
+                <td id="line"></td>
+                <td id="td-sobre">
+                  <div class="ml-3">
+                    <label class="mb-0 font-staat tags">
+                      <i class="fa fa-circle mr-1" aria-hidden="true"></i>
+                      Kotlin
+                      <i class="fa fa-circle mr-1 ml-3" aria-hidden="true"></i>
+                      Laravel
+                      <i class="fa fa-circle mr-1 ml-3" aria-hidden="true"></i>
+                      Docker
+                      <i class="fa fa-circle mr-1 ml-3" aria-hidden="true"></i>
+                      AWS
+                    </label>
+                    <br />
+                    <label class="mb-0 mr-3 table-instituicao">
+                      <i class="fa fa-building" aria-hidden="true"></i>
+                      <a href="https://loft.com.br/" class="texts-inside">
+                        Loft
+                        <i
+                          class="fa fa-link"
+                          aria-hidden="true"
+                          style="font-size: 13px"
+                        ></i>
+                      </a>
+                    </label>
+                    <p class="m-0">
+                      <i class="fas fa-business-time"></i> Integral
+                    </p>
+                    <div class="row">
+                      <div class="col-md-6 pr-0">
+                        <div class="infos-emprego">
+                          <i
+                            class="fa fa-genderless"
+                            aria-hidden="true"
+                            style="font-size: 13px"
+                          ></i>
+                          Pleno
+                        </div>
+                        <label class="mb-0 mr-3">
+                          <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
+                          MAR/2023
+                          <br />
+                          <label id="calendar-arrow" class="h5">
+                            <i
+                              class="fa fa-long-arrow-down"
+                              aria-hidden="true"
+                            ></i>
+                          </label>
+                          <br />
+                          <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
+                          Atualmente
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div id="credpago-pleno">
+            <p
+              id="text-education"
+              class="mb-0 texts-inside font-mont text-justify"
+            >
+              <label class="mb-0 subtopicos-name">
+                <i class="fas fa-code"></i>
+                Desenvolvedor Pleno I
               </label>
             </p>
             <table id="table-experiencia" class="subtopicos-table mt-1">
@@ -184,7 +262,7 @@
                       <i class="fa fa-circle mr-1" aria-hidden="true"></i>
                       Laravel
                       <i class="fa fa-circle mr-1 ml-3" aria-hidden="true"></i>
-                      PHP
+                      Node.js
                       <i class="fa fa-circle mr-1 ml-3" aria-hidden="true"></i>
                       Docker
                       <i class="fa fa-circle mr-1 ml-3" aria-hidden="true"></i>
@@ -202,16 +280,65 @@
                         ></i>
                       </a>
                     </label>
-                    <div class="infos-emprego">
-                      <i class="fas fa-business-time"></i>
-                      Integral
-                      <i
-                        class="fa fa-genderless"
-                        aria-hidden="true"
-                        style="font-size: 13px"
-                      ></i>
-                      Júnior III
-                    </div>
+                    <p class="m-0">
+                      <i class="fas fa-business-time"></i> Integral
+                    </p>
+                    <label class="mb-0 mr-3">
+                      <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
+                      DEZ/2021
+                      <br />
+                      <label id="calendar-arrow" class="h5">
+                        <i class="fa fa-long-arrow-down" aria-hidden="true"></i>
+                      </label>
+                      <br />
+                      <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
+                      MAR/2023
+                    </label>
+                  </div>
+                </td>
+              </tr>
+            </table>
+          </div>
+          <div id="credpago-junior">
+            <p
+              id="text-education"
+              class="mb-0 texts-inside font-mont text-justify"
+            >
+              <label class="mb-0 subtopicos-name">
+                <i class="fas fa-code"></i>
+                Desenvolvedor Júnior III
+              </label>
+            </p>
+            <table id="table-experiencia" class="subtopicos-table mt-1">
+              <tr>
+                <td id="line"></td>
+                <td id="td-sobre">
+                  <div class="ml-3">
+                    <label class="mb-0 font-staat tags">
+                      <i class="fa fa-circle mr-1" aria-hidden="true"></i>
+                      Laravel
+                      <i class="fa fa-circle mr-1 ml-3" aria-hidden="true"></i>
+                      Node.js
+                      <i class="fa fa-circle mr-1 ml-3" aria-hidden="true"></i>
+                      Docker
+                      <i class="fa fa-circle mr-1 ml-3" aria-hidden="true"></i>
+                      MariaDB
+                    </label>
+                    <br />
+                    <label class="mb-0 mr-3 table-instituicao">
+                      <i class="fa fa-building" aria-hidden="true"></i>
+                      <a href="https://credpago.com.br/" class="texts-inside">
+                        CredPago
+                        <i
+                          class="fa fa-link"
+                          aria-hidden="true"
+                          style="font-size: 13px"
+                        ></i>
+                      </a>
+                    </label>
+                    <p class="m-0">
+                      <i class="fas fa-business-time"></i> Integral
+                    </p>
                     <label class="mb-0 mr-3">
                       <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
                       MAR/2021
@@ -221,7 +348,7 @@
                       </label>
                       <br />
                       <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
-                      Atualmente
+                      DEZ/2021
                     </label>
                   </div>
                 </td>
@@ -410,7 +537,7 @@
                     </label>
                     <br />
                     <i class="fa fa-calendar mr-2" aria-hidden="true"></i>
-                    Atualmente
+                    JUN/2024
                   </label>
                 </div>
               </td>
@@ -419,7 +546,6 @@
         </div>
       </section>
       <!-- FIM - EDUCACAO -->
-
       <!-- HABILIDADES -->
       <section id="skills" class="scroll-animate">
         <p class="h1 title-section font-staat">
@@ -439,67 +565,41 @@
               <td class="bg-white ml-3"></td>
               <td>
                 <div class="ml-3">
-                  <p class="mb-0 text-uppercase mb-1 sub-subtopico">
-                    - Full Stack
-                    <i class="fa fa-fire" aria-hidden="true"></i>
-                  </p>
                   <p class="ml-3 mb-2">
+                    <label id="back-springboot" class="skills-icons">
+                      Spring Boot
+                    </label>
                     <label id="back-laravel" class="skills-icons">
                       Laravel
                     </label>
-                    <label id="back-php" class="skills-icons"> PHP </label>
-                    <label id="back-js" class="skills-icons">
-                      JavaScript
-                    </label>
-                  </p>
-                  <p class="mb-0 text-uppercase mb-1 sub-subtopico">
-                    - Front-End
-                    <i class="fa fa-picture-o" aria-hidden="true"></i>
-                  </p>
-                  <p class="ml-3 mb-2">
-                    <label id="back-html" class="skills-icons"> HTML </label>
-                    <label id="back-css" class="skills-icons"> CSS </label>
-                    <label id="back-bootstrap" class="skills-icons">
-                      Bootstrap
-                    </label>
                     <label id="back-react" class="skills-icons"> React </label>
-                  </p>
-                  <p class="mb-0 text-uppercase mb-1 sub-subtopico">
-                    - Back-End
-                    <i class="fa fa-gears" aria-hidden="true"></i>
-                  </p>
-                  <p class="ml-3 mb-2">
                     <label id="back-node" class="skills-icons"> Node.js </label>
                   </p>
                 </div>
               </td>
             </tr>
           </table>
-          <p class="mb-0 mt-0 texts-inside font-mont">
-            <label class="subtopicos-name">
-              <i
-                class="fa fa-mobile ml-2"
-                aria-hidden="true"
-                style="font-size: 24px"
-              ></i>
-              Desenvolvimento Mobile
-            </label>
-          </p>
-          <table class="subtopicos-table mt-1">
-            <tr>
-              <td class="bg-white ml-3"></td>
-              <td>
-                <div class="ml-3 mt-1">
-                  <p class="ml-3 mb-2">
-                    <label id="back-ionic" class="skills-icons"> IONIC </label>
-                    <label id="back-flutter" class="skills-icons">
-                      Flutter
-                    </label>
-                  </p>
-                </div>
-              </td>
-            </tr>
-          </table>
+
+          <!-- <p class="mb-0 mt-0 texts-inside font-mont">
+		<label class="subtopicos-name">
+		  <i class="fa fa-mobile ml-2" aria-hidden="true" style="font-size: 24px"></i>
+		  Desenvolvimento Mobile
+		</label>
+	  </p>
+	  <table class="subtopicos-table mt-1">
+		<tr>
+		  <td class="bg-white ml-3"></td>
+		  <td>
+			<div class="ml-3 mt-1">
+			  <p class="ml-3 mb-2">
+				<label id="back-ionic" class="skills-icons"> IONIC </label>
+				<label id="back-flutter" class="skills-icons"> Flutter </label>
+			  </p>
+			</div>
+		  </td>
+		</tr>
+	  </table> -->
+
           <p class="mb-0 mt-0 texts-inside font-mont">
             <label class="subtopicos-name">
               <i class="fa fa-database ml-1" aria-hidden="true"></i>
@@ -512,18 +612,32 @@
               <td>
                 <div class="ml-3 mt-1">
                   <p class="ml-3 mb-2">
+                    <label id="back-postgresql" class="skills-icons">
+                      PostgreSQL
+                    </label>
+                    <label id="back-mongodb" class="skills-icons">
+                      MongoDB
+                    </label>
                     <label id="back-mysql" class="skills-icons"> MySQL </label>
                     <label id="back-oracle" class="skills-icons">
                       Oracle
                     </label>
+                    <br />
                     <label id="back-mariadb" class="skills-icons">
                       MariaDB
+                    </label>
+                    <label id="back-bigquery" class="skills-icons">
+                      BigQuery
+                    </label>
+                    <label id="back-databricks" class="skills-icons">
+                      Databricks
                     </label>
                   </p>
                 </div>
               </td>
             </tr>
           </table>
+
           <p class="mb-0 mt-0 texts-inside font-mont">
             <label class="subtopicos-name">
               <i class="fa fa-language" aria-hidden="true"></i>
@@ -536,16 +650,22 @@
               <td>
                 <div class="ml-3 mt-1">
                   <p class="ml-3 mb-2">
+                    <label id="back-kotlin" class="skills-icons">
+                      Kotlin
+                    </label>
                     <label id="back-python" class="skills-icons">
                       Python
                     </label>
                     <label id="back-java" class="skills-icons"> Java </label>
-                    <label id="back-c" class="skills-icons"> C </label>
+                    <label id="back-typescript" class="skills-icons">
+                      TypeScript
+                    </label>
                   </p>
                 </div>
               </td>
             </tr>
           </table>
+
           <p class="mb-0 mt-0 texts-inside font-mont">
             <label class="subtopicos-name">
               <i class="fa fa-sitemap" aria-hidden="true"></i>
@@ -562,15 +682,19 @@
                     <label id="meto-kanban" class="skills-icons">
                       Kanban
                     </label>
+                    <label id="back-bigquery" class="skills-icons">
+                      GitFlow
+                    </label>
                   </p>
                 </div>
               </td>
             </tr>
           </table>
+
           <p class="mb-0 mt-0 texts-inside font-mont">
             <label class="subtopicos-name">
               <i class="fa fa-terminal" aria-hidden="true"></i>
-              Sistemas
+              Sistemas e Infraestrutura
             </label>
           </p>
           <table class="subtopicos-table mt-1">
@@ -580,8 +704,24 @@
                 <div class="ml-3 mt-1">
                   <p class="ml-3 mb-2">
                     <label id="back-git" class="skills-icons"> Git </label>
-                    <label id="back-docker" class="skills-icons"> Docker </label>
-                    <label id="back-ps" class="skills-icons"> Photoshop </label>
+                    <label id="back-docker" class="skills-icons">
+                      Docker
+                    </label>
+                    <label id="back-datadog" class="skills-icons">
+                      Datadog
+                    </label>
+                    <label id="back-argocd" class="skills-icons">
+                      ArgoCD
+                    </label>
+                    <br />
+                    <label id="back-github-actions" class="skills-icons">
+                      GitHub Actions
+                    </label>
+                    <label id="back-aws" class="skills-icons"> AWS </label>
+                    <label id="back-gcp" class="skills-icons"> GCP </label>
+                    <label id="back-restapi" class="skills-icons">
+                      Restful APIs
+                    </label>
                   </p>
                 </div>
               </td>
@@ -590,6 +730,104 @@
         </div>
       </section>
       <!-- FIM - EXPERIENCIA -->
+
+      <!-- PROJETOS -->
+      <section id="projetos" class="scroll-animate" hidden>
+        <p class="h1 title-section font-staat">
+          <i class="fa fa-code-fork mr-1 ml-0" aria-hidden="true"></i>
+          ALGUNS PROJETOS
+        </p>
+        <div class="subtopicos">
+          <ul class="texts-inside font-mont">
+            <li>
+              <strong>PiZero-RemoteSensor</strong>
+              <p>
+                Sistema IoT implementado na Raspberry Pi Zero, capturando e
+                exibindo medidas num display LCD e na Web, com comunicação e
+                controle remoto via servidor Python usando o protocolo MQTT.
+                <br />
+                <a
+                  href="https://github.com/KevinCerqueira/PiZero-RemoteSensor"
+                  target="_blank"
+                  rel="noopener"
+                  class="mygreen-text"
+                >
+                  <i class="fa fa-github" aria-hidden="true"></i> Ver no GitHub
+                </a>
+              </p>
+            </li>
+            <li>
+              <strong>finance-api</strong>
+              <p>
+                Uma API voltada para o setor financeiro, fornecendo dados como
+                cotações de moedas, ações ou outros indicadores econômicos.
+                Desenvolvida com Kotlin.
+                <br />
+                <a
+                  href="https://github.com/KevinCerqueira/finance-api"
+                  target="_blank"
+                  rel="noopener"
+                  class="mygreen-text"
+                >
+                  <i class="fa fa-github" aria-hidden="true"></i> Ver no GitHub
+                </a>
+              </p>
+            </li>
+            <li>
+              <strong>GPT-NewsRanker</strong>
+              <p>
+                Projeto que utiliza modelos de inteligência artificial, como o
+                GPT, para classificar ou ranquear notícias com base em critérios
+                como relevância, credibilidade ou popularidade.
+                <br />
+                <a
+                  href="https://github.com/KevinCerqueira/GPT-NewsRanker"
+                  target="_blank"
+                  rel="noopener"
+                  class="mygreen-text"
+                >
+                  <i class="fa fa-github" aria-hidden="true"></i> Ver no GitHub
+                </a>
+              </p>
+            </li>
+            <li>
+              <strong>UEFS-Resolutions-OCR</strong>
+              <p>
+                Projeto de OCR (Reconhecimento Óptico de Caracteres) focado em
+                extrair dados de resoluções do CONSEPE da UEFS. Transforma PDFs
+                ou imagens em texto e extrai informações relevantes.
+                <br />
+                <a
+                  href="https://github.com/KevinCerqueira/UEFS-Resolutions-OCR"
+                  target="_blank"
+                  rel="noopener"
+                  class="mygreen-text"
+                >
+                  <i class="fa fa-github" aria-hidden="true"></i> Ver no GitHub
+                </a>
+              </p>
+            </li>
+            <li>
+              <strong>dolaride.py</strong>
+              <p>
+                Web Scraping & Twitter BOT: O Dolaride.py é um script que
+                captura informações sobre a cotação do dólar e faz posts no
+                Twitter automaticamente sobre o mesmo
+                <br />
+                <a
+                  href="https://github.com/KevinCerqueira/dolaride.py"
+                  target="_blank"
+                  rel="noopener"
+                  class="mygreen-text"
+                >
+                  <i class="fa fa-github" aria-hidden="true"></i> Ver no GitHub
+                </a>
+              </p>
+            </li>
+          </ul>
+        </div>
+      </section>
+      <!-- FIM - PROJETOS -->
 
       <!-- OUTRAS INFORMAÇÕES -->
       <!-- <section id="outras-informacoes" class="scroll-animate">
