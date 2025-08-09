@@ -196,7 +196,8 @@ img { max-width: 100%; height: auto; display: block; }
 .social a:hover { color: var(--accent); background: var(--surface-hover); }
 
 /* Sections */
-.section { padding: var(--space-6) 0; }
+.section { padding-block: var(--space-6); }
+.hero, .section { scroll-margin-top: 76px; }
 .section-title {
   font-size: clamp(22px, 3vw, 28px);
   margin: 0 0 var(--space-4);
@@ -330,12 +331,18 @@ img { max-width: 100%; height: auto; display: block; }
 @media (min-width: 1024px) {
   .hero { padding-top: var(--space-7); padding-bottom: var(--space-7); }
   .hero-content { padding-top: var(--space-7); padding-bottom: var(--space-7); }
-  .section { padding: var(--space-7) 0; }
+  .section { padding-block: var(--space-5); }
 }
 
 /* Small screens: increase horizontal padding to avoid content touching edges */
 @media (max-width: 480px) {
   .container { padding: 0 var(--space-6); }
+  /* Mais respiro no mobile */
+  .hero { padding-block: var(--space-7); }
+  .hero-content { padding-top: var(--space-6); padding-bottom: var(--space-6); }
+  .section { padding-block: var(--space-3); }
+  .section-title { margin-bottom: var(--space-5); }
+  .cards { gap: var(--space-5); }
   .card { padding: var(--space-4); }
 }
 
