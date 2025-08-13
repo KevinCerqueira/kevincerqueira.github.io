@@ -126,11 +126,11 @@
       contactLead: 'Curtiu o que viu? Vamos conversar.',
       contactEmailBtn: 'Enviar e-mail',
       sectionVolTitle: 'Atividades e Voluntariado',
-      volIeeeRole: 'Researcher · IEEE UEFS Student Branch',
+      volIeeeRole: 'Pesquisador · IEEE UEFS Student Branch',
       volIeeeTime: 'Mai/2018 — Dez/2019 · 1 ano e 8 meses',
       volIeeeDesc: 'Pesquisa e desenvolvimento de projetos de tecnologia com foco em cultura e educação.',
 
-      volUefsRole: 'Software Engineer · Universidade Estadual de Feira de Santana',
+      volUefsRole: 'Engenheiro de Software · Universidade Estadual de Feira de Santana',
       volUefsTime: 'Nov/2019 — Jun/2020 · 8 meses',
       volUefsDesc: 'Desenvolvimento voluntário de um sistema de gestão de agendamentos para o Observatório Astronômico Antares (Feira de Santana/BA), cobrindo reservas de visitantes/escolas e funções administrativas.',
       volUefsB1: 'Fluxos de agendamento e administração para a equipe do observatório',
