@@ -34,8 +34,14 @@
           <a href="#contato" data-i18n="navContato">Contato</a>
         </div>
         <div class="lang-switch" role="group" aria-label="Language switch">
-          <button class="lang-btn" data-lang="pt" aria-pressed="true">PT</button>
-          <button class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+          <button class="lang-btn" data-lang="pt" aria-pressed="true" aria-label="Mudar para Português">
+            <span class="flag" aria-hidden="true">🇧🇷</span>
+            <span class="label">PT</span>
+          </button>
+          <button class="lang-btn" data-lang="en" aria-pressed="false" aria-label="Switch to English">
+            <span class="flag" aria-hidden="true">🇺🇸</span>
+            <span class="label">EN</span>
+          </button>
         </div>
     <button id="theme-toggle" class="theme-toggle" aria-label="Mudar para modo escuro" title="Alternar tema">
       <i class="fa fa-moon-o" aria-hidden="true"></i>
@@ -86,7 +92,7 @@
         <article class="card job">
           <header class="job-header">
             <h3 class="job-role" data-i18n="jobLoftRole">Engenheiro de Software · Loft</h3>
-            <span class="job-time" data-i18n="jobLoftTime">Mar/2023 — Atualmente</span>
+            <span class="job-time" data-i18n="jobLoftTime" data-start="2023-03" data-end="present">Mar/2023 — Atualmente</span>
           </header>
           <p data-i18n="jobLoftDesc">Desenvolvimento de funcionalidades financeiras em Kotlin e manutenção de sistemas em Laravel/JS.</p>
           <ul>
@@ -106,7 +112,7 @@
         <article class="card job">
           <header class="job-header">
             <h3 class="job-role" data-i18n="jobCredRole">Desenvolvedor Pleno I · CredPago</h3>
-            <span class="job-time" data-i18n="jobCredTime">Dez/2021 — Mar/2023</span>
+            <span class="job-time" data-i18n="jobCredTime" data-start="2021-12" data-end="2023-03">Dez/2021 — Mar/2023</span>
           </header>
           <p data-i18n="jobCredDesc">Back-end com Laravel/Node, conteinerização e banco de dados MariaDB.</p>
           <ul>
@@ -125,8 +131,8 @@
         </article>
         <article class="card job">
           <header class="job-header">
-            <h3 class="job-role" data-i18n="jobCredJrRole">Desenvolvedor Júnior III · CredPago</h3>
-            <span class="job-time" data-i18n="jobCredJrTime">Mar/2021 — Dez/2021</span>
+            <h3 class="job-role" data-i18n="jobCredJrRole">Desenvolvedor Júnior III · CredPago</h3><br>
+            <span class="job-time" data-i18n="jobCredJrTime" data-start="2021-03" data-end="2021-12">Mar/2021 — Dez/2021</span>
           </header>
           <p data-i18n="jobCredJrDesc">Suporte e manutenção de sistemas full‑stack em PHP/Laravel e novas APIs/microsserviços.</p>
           <ul>
@@ -145,7 +151,7 @@
         <article class="card job">
           <header class="job-header">
             <h3 class="job-role" data-i18n="jobSoftRole">Analista de Sistemas · SoftwareDATA</h3>
-            <span class="job-time" data-i18n="jobSoftTime">Jul/2020 — Mar/2021</span>
+            <span class="job-time" data-i18n="jobSoftTime" data-start="2020-07" data-end="2021-03">Jul/2020 — Mar/2021</span>
           </header>
           <p data-i18n="jobSoftDesc">Desenvolvimento com Laravel/PHP/Java e banco de dados Oracle.</p>
           <ul>
@@ -164,7 +170,7 @@
         <article class="card job">
           <header class="job-header">
             <h3 class="job-role" data-i18n="jobN2Role">Desenvolvedor Mobile · N2 Soluções</h3>
-            <span class="job-time" data-i18n="jobN2Time">Ago/2020 — Nov/2020</span>
+            <span class="job-time" data-i18n="jobN2Time" data-start="2020-08" data-end="2020-11">Ago/2020 — Nov/2020</span>
           </header>
           <p data-i18n="jobN2Desc">Projetos mobile com Ionic/React e back-end em Laravel/MySQL.</p>
           <ul>
@@ -421,6 +427,11 @@
     <footer class="site-footer container">
       <p>© <span id="year"></span> Kevin Cerqueira</p>
     </footer>
+
+    <a id="back-to-top" class="back-to-top" href="#home" aria-label="Voltar ao início" title="Voltar ao início">
+      <i class="fa fa-arrow-up" aria-hidden="true"></i>
+      <span class="label" data-i18n="backToTop">Voltar ao início</span>
+    </a>
 
     <script src="js/app.js"></script>
   </body>

@@ -53,6 +53,9 @@
       heroAgeSuffix: ' anos',
       heroCtaPrimary: 'Fale comigo',
       heroCtaSecondary: 'Experiência',
+      langSwitcherAria: 'Alternar idioma',
+      langPtAria: 'Mudar para Português',
+      langEnAria: 'Mudar para Inglês',
       sectionSobreTitle: 'Sobre',
       aboutText: 'Oi, eu sou o Kevin! Sou graduado em Engenharia de Computação pela Universidade Estadual de Feira de Santana (UEFS) e atuo como Engenheiro de Software Pleno. Na Loft, sou responsável por desenvolver e manter sistemas financeiros, incluindo módulos de Contas a Pagar, Contas a Receber, Checkout de Pagamentos, Emissão de Notas, Conciliação Financeira e integrações com sistemas bancários — principalmente utilizando Kotlin. Também modernizo e mantenho sistemas legados em Laravel, PHP e JavaScript. No front‑end, tenho experiência com React; no back‑end, já trabalhei com Node.js e Java. Uso Python diariamente para automação, web scraping e soluções de IoT a fim de otimizar processos internos. Em bancos de dados, atualmente trabalho com PostgreSQL, mas possuo sólida experiência com Oracle, MySQL/MariaDB e MongoDB de projetos e funções anteriores. Em cloud e engenharia de dados, trabalho diariamente com Google Cloud (GCP) e BigQuery para análises em larga escala (com experiência prévia em Databricks), além de AWS (SQS, SNS, EC2...) para soluções de infraestrutura escaláveis. Em infraestrutura e DevOps, utilizo Docker para conteinerização, implemento pipelines de CI/CD com GitHub Actions e garanto alta disponibilidade por meio de monitoramento com Datadog e ArgoCD.',
       sectionExperienciaTitle: 'Experiência',
@@ -135,6 +138,7 @@
       volUefsDesc: 'Desenvolvimento voluntário de um sistema de gestão de agendamentos para o Observatório Astronômico Antares (Feira de Santana/BA), cobrindo reservas de visitantes/escolas e funções administrativas.',
       volUefsB1: 'Fluxos de agendamento e administração para a equipe do observatório',
       volUefsB2: 'Do levantamento de requisitos ao deploy, seguindo metodologia Waterfall',
+      backToTop: 'Voltar ao início',
     },
     en: {
       documentLang: 'en',
@@ -154,6 +158,9 @@
       heroAgeSuffix: ' years old',
       heroCtaPrimary: 'Contact me',
       heroCtaSecondary: 'Experience',
+      langSwitcherAria: 'Language switch',
+      langPtAria: 'Switch to Portuguese',
+      langEnAria: 'Switch to English',
       sectionSobreTitle: 'About',
       aboutText: "Hi, I'm Kevin! I hold a degree in Computer Engineering from the State University of Feira de Santana (UEFS) and currently work as a Mid-Level Software Engineer. At Loft, I’m responsible for developing and maintaining financial systems, including modules for Accounts Payable, Accounts Receivable, Payment Checkout, Invoice Issuance, Financial Reconciliation, and integrations with banking systems—primarily using Kotlin. I also modernize and maintain legacy systems built with Laravel, PHP, and JavaScript. On the front-end, I have experience with React, and on the back-end, I’ve worked with Node.js and Java. I use Python daily for automation, web scraping, and IoT solutions to optimize internal processes. For databases, I currently work with PostgreSQL but have solid experience with Oracle, MySQL/MariaDB, and MongoDB from previous projects and roles. In cloud and data engineering, I work daily with Google Cloud (GCP) and BigQuery for large-scale data analysis (with prior experience in Databricks), along with AWS (SQS, SNS, EC2...) for scalable infrastructure solutions. For infrastructure and DevOps, I use Docker for containerization, implement CI/CD pipelines with GitHub Actions, and ensure high system availability through monitoring with Datadog and ArgoCD.",
       sectionExperienciaTitle: 'Experience',
@@ -236,6 +243,7 @@
       volUefsDesc: "Volunteered with a student team to develop a scheduling management system for the Antares Astronomical Observatory (Feira de Santana, BA), covering visitor/school bookings and administrative functions.",
       volUefsB1: 'Scheduling and administration flows for observatory staff',
       volUefsB2: 'From requirements gathering to deployment, following Waterfall methodology',
+      backToTop: 'Back to top',
     }
   };
 
@@ -270,9 +278,78 @@
       ageEl.textContent = age + dict.heroAgeSuffix;
     }
 
-    // Update lang switch pressed state
+    // Update lang switch pressed state + aria labels
+    var switchGroup = document.querySelector('.lang-switch');
+    if (switchGroup) {
+      switchGroup.setAttribute('aria-label', dict.langSwitcherAria || 'Language switch');
+    }
     document.querySelectorAll('.lang-btn').forEach(function (btn) {
-      btn.setAttribute('aria-pressed', btn.getAttribute('data-lang') === lang ? 'true' : 'false');
+      var isActive = btn.getAttribute('data-lang') === lang;
+      btn.setAttribute('aria-pressed', isActive ? 'true' : 'false');
+      var which = btn.getAttribute('data-lang') === 'pt' ? 'langPtAria' : 'langEnAria';
+      var aria = dict[which] || btn.getAttribute('aria-label') || '';
+      if (aria) btn.setAttribute('aria-label', aria);
+    });
+
+    renderJobDurations(lang);
+  }
+
+  function parseYearMonth(value) {
+    if (!value || typeof value !== 'string') return null;
+    var parts = value.split('-');
+    if (parts.length !== 2) return null;
+    var year = parseInt(parts[0], 10);
+    var month = parseInt(parts[1], 10);
+    if (!year || !month || month < 1 || month > 12) return null;
+    return { year: year, month: month };
+  }
+
+  function diffMonthsInclusive(startYm, endYm) {
+    if (!startYm || !endYm) return 0;
+    var months = (endYm.year - startYm.year) * 12 + (endYm.month - startYm.month) + 1;
+    return months < 0 ? 0 : months;
+  }
+
+  function formatDurationMonths(totalMonths, lang) {
+    if (totalMonths <= 0) return lang === 'pt' ? 'menos de 1 mês' : 'less than 1 mo';
+    var years = Math.floor(totalMonths / 12);
+    var months = totalMonths % 12;
+    if (lang === 'pt') {
+      var partsPt = [];
+      if (years > 0) partsPt.push(years + ' ' + (years === 1 ? 'ano' : 'anos'));
+      if (months > 0) partsPt.push(months + ' ' + (months === 1 ? 'mês' : 'meses'));
+      return partsPt.join(' e ');
+    } else {
+      var partsEn = [];
+      if (years > 0) partsEn.push(years + ' ' + (years === 1 ? 'yr' : 'yrs'));
+      if (months > 0) partsEn.push(months + ' ' + (months === 1 ? 'mo' : 'mos'));
+      return partsEn.join(' ');
+    }
+  }
+
+  function renderJobDurations(lang) {
+    var now = new Date();
+    var nowYm = { year: now.getFullYear(), month: now.getMonth() + 1 };
+    var nodes = document.querySelectorAll('.job-time');
+    nodes.forEach(function (el) {
+      var startAttr = el.getAttribute('data-start');
+      var endAttr = el.getAttribute('data-end');
+      if (!startAttr) return;
+      var startYm = parseYearMonth(startAttr);
+      var endYm = endAttr === 'present' ? nowYm : parseYearMonth(endAttr);
+      if (!startYm || !endYm) return;
+      var months = diffMonthsInclusive(startYm, endYm);
+      var formatted = formatDurationMonths(months, lang);
+      if (!formatted) return;
+
+      var sibling = el.nextElementSibling;
+      var durationEl = sibling && sibling.classList && sibling.classList.contains('job-duration') ? sibling : null;
+      if (!durationEl) {
+        durationEl = document.createElement('span');
+        durationEl.className = 'job-duration';
+        el.insertAdjacentElement('afterend', durationEl);
+      }
+      durationEl.textContent = ' \u00B7 ' + formatted;
     });
   }
 
@@ -330,5 +407,20 @@
     // Year in footer
     var yearEl = document.getElementById('year');
     if (yearEl) yearEl.textContent = new Date().getFullYear();
+
+    // Back to top visibility near page end
+    var backTop = document.getElementById('back-to-top');
+    if (backTop) {
+      var onScroll = function () {
+        var scrollY = window.scrollY || window.pageYOffset;
+        var viewport = window.innerHeight || document.documentElement.clientHeight;
+        var docHeight = Math.max(document.body.scrollHeight, document.documentElement.scrollHeight);
+        var nearEnd = scrollY + viewport >= docHeight - 300; // within 300px of bottom
+        if (nearEnd) backTop.classList.add('is-visible');
+        else backTop.classList.remove('is-visible');
+      };
+      onScroll();
+      window.addEventListener('scroll', onScroll, { passive: true });
+    }
   });
 })();
