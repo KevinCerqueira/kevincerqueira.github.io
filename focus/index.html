@@ -1,0 +1,1095 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#101820" />
+    <title>Focus - Plano alimentar</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f6f7f2;
+        --ink: #101820;
+        --muted: #667085;
+        --panel: #ffffff;
+        --line: #d9ded2;
+        --green: #2f7d4f;
+        --teal: #167a7f;
+        --amber: #b7791f;
+        --red: #b42318;
+        --soft-green: #e8f3ea;
+        --soft-teal: #e5f3f4;
+        --soft-amber: #fff3d6;
+        --shadow: 0 12px 32px rgba(16, 24, 32, 0.08);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      html {
+        scroll-behavior: smooth;
+      }
+
+      body {
+        margin: 0;
+        background: var(--bg);
+        color: var(--ink);
+        font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+        line-height: 1.5;
+      }
+
+      a {
+        color: inherit;
+      }
+
+      button,
+      input {
+        font: inherit;
+      }
+
+      .shell {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        padding: 18px 16px 96px;
+      }
+
+      .topbar {
+        position: sticky;
+        top: 0;
+        z-index: 5;
+        margin: 0 0 18px;
+        padding: 12px 16px;
+        background: rgba(246, 247, 242, 0.9);
+        border-bottom: 1px solid rgba(217, 222, 210, 0.8);
+        backdrop-filter: blur(14px);
+      }
+
+      .topbar-inner {
+        width: min(1180px, 100%);
+        margin: 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .brand {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        min-width: 0;
+      }
+
+      .brand-mark {
+        width: 40px;
+        height: 40px;
+        border-radius: 8px;
+        display: grid;
+        place-items: center;
+        flex: 0 0 auto;
+        background: var(--ink);
+        color: white;
+        font-weight: 800;
+      }
+
+      .brand-text {
+        min-width: 0;
+      }
+
+      .brand-text strong,
+      .brand-text span {
+        display: block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+
+      .brand-text span {
+        color: var(--muted);
+        font-size: 13px;
+      }
+
+      .home-link {
+        flex: 0 0 auto;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 9px 12px;
+        background: var(--panel);
+        text-decoration: none;
+        color: var(--muted);
+        font-size: 14px;
+        font-weight: 700;
+      }
+
+      .hero {
+        display: grid;
+        gap: 16px;
+        margin-bottom: 18px;
+      }
+
+      .hero-card {
+        background: var(--ink);
+        color: white;
+        border-radius: 8px;
+        padding: 22px;
+        box-shadow: var(--shadow);
+      }
+
+      .eyebrow {
+        margin: 0 0 8px;
+        color: #a8e6c0;
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+      }
+
+      h1 {
+        margin: 0;
+        font-size: clamp(30px, 8vw, 58px);
+        line-height: 0.98;
+        letter-spacing: 0;
+      }
+
+      .hero-card p {
+        margin: 12px 0 0;
+        max-width: 760px;
+        color: #d7dde0;
+      }
+
+      .target-grid,
+      .metric-grid,
+      .week-grid,
+      .tool-grid {
+        display: grid;
+        gap: 12px;
+      }
+
+      .target-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .metric,
+      .panel,
+      .day-card {
+        background: var(--panel);
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        box-shadow: var(--shadow);
+      }
+
+      .metric {
+        padding: 14px;
+      }
+
+      .metric span {
+        display: block;
+        color: var(--muted);
+        font-size: 12px;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      .metric strong {
+        display: block;
+        margin-top: 4px;
+        font-size: 24px;
+        line-height: 1;
+      }
+
+      .metric small {
+        display: block;
+        margin-top: 7px;
+        color: var(--muted);
+        font-size: 12px;
+      }
+
+      .section {
+        margin-top: 22px;
+      }
+
+      .section-head {
+        display: flex;
+        align-items: end;
+        justify-content: space-between;
+        gap: 12px;
+        margin-bottom: 10px;
+      }
+
+      h2 {
+        margin: 0;
+        font-size: 22px;
+        line-height: 1.1;
+      }
+
+      .section-head p {
+        margin: 4px 0 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .day-nav {
+        display: flex;
+        gap: 8px;
+        overflow-x: auto;
+        padding: 2px 0 8px;
+        scrollbar-width: none;
+      }
+
+      .day-nav::-webkit-scrollbar {
+        display: none;
+      }
+
+      .day-nav button {
+        min-width: 56px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 9px 12px;
+        background: var(--panel);
+        color: var(--muted);
+        cursor: pointer;
+        font-weight: 800;
+      }
+
+      .day-nav button.is-active {
+        background: var(--ink);
+        border-color: var(--ink);
+        color: white;
+      }
+
+      .week-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .day-card {
+        overflow: hidden;
+      }
+
+      .day-card.is-hidden {
+        display: none;
+      }
+
+      .day-header {
+        padding: 16px;
+        display: grid;
+        gap: 12px;
+        border-bottom: 1px solid var(--line);
+        background: linear-gradient(180deg, #ffffff, #fafbf8);
+      }
+
+      .day-title {
+        display: flex;
+        align-items: start;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .day-title h3 {
+        margin: 0;
+        font-size: 20px;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        min-height: 28px;
+        border-radius: 999px;
+        padding: 5px 10px;
+        background: var(--soft-green);
+        color: var(--green);
+        font-size: 12px;
+        font-weight: 800;
+        white-space: nowrap;
+      }
+
+      .tag.is-free {
+        background: var(--soft-amber);
+        color: var(--amber);
+      }
+
+      .workout {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .macro-row {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 8px;
+      }
+
+      .macro {
+        min-width: 0;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 9px;
+        background: white;
+      }
+
+      .macro span {
+        display: block;
+        color: var(--muted);
+        font-size: 11px;
+        font-weight: 800;
+        text-transform: uppercase;
+      }
+
+      .macro strong {
+        display: block;
+        margin-top: 2px;
+        font-size: 18px;
+      }
+
+      .meal-list {
+        display: grid;
+        gap: 0;
+      }
+
+      .meal {
+        display: grid;
+        gap: 9px;
+        padding: 15px 16px;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .meal:last-child {
+        border-bottom: 0;
+      }
+
+      .meal-top {
+        display: flex;
+        justify-content: space-between;
+        gap: 12px;
+      }
+
+      .meal h4 {
+        margin: 0;
+        font-size: 15px;
+      }
+
+      .meal p {
+        margin: 0;
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .meal .numbers {
+        color: var(--teal);
+        font-size: 12px;
+        font-weight: 900;
+        text-align: right;
+        white-space: nowrap;
+      }
+
+      .checkline {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .checkline label {
+        display: inline-flex;
+        align-items: center;
+        gap: 7px;
+        min-height: 34px;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        padding: 6px 9px;
+        background: #fbfcf8;
+        color: var(--muted);
+        font-size: 13px;
+        font-weight: 700;
+      }
+
+      .checkline input {
+        width: 16px;
+        height: 16px;
+        accent-color: var(--green);
+      }
+
+      .panel {
+        padding: 16px;
+      }
+
+      .panel h3 {
+        margin: 0 0 10px;
+        font-size: 18px;
+      }
+
+      .panel p,
+      .panel li {
+        color: var(--muted);
+        font-size: 14px;
+      }
+
+      .panel p {
+        margin: 0;
+      }
+
+      .panel ul {
+        margin: 0;
+        padding-left: 18px;
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+        border: 1px solid var(--line);
+        border-radius: 8px;
+        background: white;
+      }
+
+      table {
+        width: 100%;
+        min-width: 760px;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 11px 12px;
+        border-bottom: 1px solid var(--line);
+        text-align: left;
+        vertical-align: top;
+        font-size: 14px;
+      }
+
+      th {
+        color: var(--muted);
+        background: #fafbf8;
+        font-size: 12px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+      }
+
+      tr:last-child td {
+        border-bottom: 0;
+      }
+
+      .progress-panel {
+        position: fixed;
+        left: 12px;
+        right: 12px;
+        bottom: 12px;
+        z-index: 8;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+        border: 1px solid rgba(16, 24, 32, 0.14);
+        border-radius: 8px;
+        padding: 11px 12px;
+        background: rgba(16, 24, 32, 0.94);
+        color: white;
+        box-shadow: 0 14px 36px rgba(16, 24, 32, 0.28);
+      }
+
+      .progress-panel strong,
+      .progress-panel span {
+        display: block;
+      }
+
+      .progress-panel span {
+        color: #cbd5d8;
+        font-size: 12px;
+      }
+
+      .progress-panel button {
+        flex: 0 0 auto;
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 8px;
+        padding: 8px 10px;
+        background: transparent;
+        color: white;
+        cursor: pointer;
+        font-size: 13px;
+        font-weight: 800;
+      }
+
+      .note {
+        border-left: 4px solid var(--amber);
+        background: var(--soft-amber);
+        color: #6f4a0c;
+      }
+
+      @media (min-width: 760px) {
+        .shell {
+          padding: 24px 24px 110px;
+        }
+
+        .topbar {
+          margin: 0 0 22px;
+          padding-inline: 24px;
+        }
+
+        .hero {
+          grid-template-columns: 1.4fr 0.9fr;
+          align-items: stretch;
+        }
+
+        .target-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .week-grid {
+          grid-template-columns: repeat(2, minmax(0, 1fr));
+        }
+
+        .tool-grid {
+          grid-template-columns: 1.05fr 0.95fr;
+        }
+
+        .progress-panel {
+          left: 50%;
+          right: auto;
+          width: min(560px, calc(100% - 32px));
+          transform: translateX(-50%);
+        }
+      }
+
+      @media (min-width: 1080px) {
+        .week-grid {
+          grid-template-columns: repeat(3, minmax(0, 1fr));
+        }
+      }
+
+      @media (prefers-color-scheme: dark) {
+        :root {
+          color-scheme: dark;
+          --bg: #0e1513;
+          --ink: #f5f7f3;
+          --muted: #a8b2aa;
+          --panel: #151f1c;
+          --line: #293632;
+          --soft-green: #143425;
+          --soft-teal: #113337;
+          --soft-amber: #3b2c11;
+          --shadow: 0 12px 32px rgba(0, 0, 0, 0.28);
+        }
+
+        .hero-card {
+          background: #111917;
+        }
+
+        .day-header {
+          background: linear-gradient(180deg, #151f1c, #111a17);
+        }
+
+        .macro,
+        .day-nav button,
+        .checkline label,
+        .table-wrap {
+          background: #111a17;
+        }
+
+        th {
+          background: #111a17;
+        }
+
+        .tag {
+          color: #9ce0b7;
+        }
+
+        .tag.is-free {
+          color: #ffd782;
+        }
+
+        .brand-mark {
+          background: #26342f;
+          color: #f5f7f3;
+        }
+
+        .day-nav button.is-active {
+          background: #f5f7f3;
+          border-color: #f5f7f3;
+          color: #0e1513;
+        }
+
+        .meal .numbers {
+          color: #75d4da;
+        }
+
+        .note {
+          color: #f8d899;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <header class="topbar">
+      <div class="topbar-inner">
+        <a class="brand" href="#top" aria-label="Ir para o topo">
+          <span class="brand-mark">KC</span>
+          <span class="brand-text">
+            <strong>Focus</strong>
+            <span>Plano alimentar semanal</span>
+          </span>
+        </a>
+        <a class="home-link" href="../">Site</a>
+      </div>
+    </header>
+
+    <main id="top" class="shell">
+      <section class="hero" aria-labelledby="page-title">
+        <div class="hero-card">
+          <p class="eyebrow">108,5 kg · 1,90 m · semana de treino</p>
+          <h1 id="page-title">Comer bem, bater proteína, manter energia.</h1>
+          <p>
+            Plano de 7 dias com café da manhã, almoço, lanche e jantar. A base usa tilápia,
+            patinho, peito de frango, aveia, mel, mamão, tangerina e frutas que você curte.
+            Whey entra só para fechar proteína sem subir gordura demais. Considerando TMB de
+            2200 kcal e treino pesado, a semana fica como déficit controlado com carbo preservado.
+          </p>
+        </div>
+
+        <div class="target-grid" aria-label="Metas principais">
+          <div class="metric">
+            <span>Meta diária</span>
+            <strong>até 2000</strong>
+            <small>kcal de segunda a sexta e domingo</small>
+          </div>
+          <div class="metric">
+            <span>Sábado</span>
+            <strong>até 2400</strong>
+            <small>com pizza planejada</small>
+          </div>
+          <div class="metric">
+            <span>Proteína</span>
+            <strong>200g+</strong>
+            <small>todos os dias</small>
+          </div>
+          <div class="metric">
+            <span>TMB informada</span>
+            <strong>2200</strong>
+            <small>déficit com treino forte</small>
+          </div>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="section-head">
+          <div>
+            <h2>Semana</h2>
+            <p>Toque no dia para focar no plano do treino.</p>
+          </div>
+        </div>
+        <nav class="day-nav" aria-label="Filtrar dias">
+          <button class="is-active" type="button" data-filter="all">Todos</button>
+          <button type="button" data-filter="seg">Seg</button>
+          <button type="button" data-filter="ter">Ter</button>
+          <button type="button" data-filter="qua">Qua</button>
+          <button type="button" data-filter="qui">Qui</button>
+          <button type="button" data-filter="sex">Sex</button>
+          <button type="button" data-filter="sab">Sáb</button>
+          <button type="button" data-filter="dom">Dom</button>
+        </nav>
+
+        <div class="week-grid" id="week-grid">
+          <article class="day-card" data-day="seg">
+            <header class="day-header">
+              <div class="day-title">
+                <div>
+                  <h3>Segunda</h3>
+                  <div class="workout">Posterior, panturrilha, abdômen + corrida 2 km antes</div>
+                </div>
+                <span class="tag">1887 kcal</span>
+              </div>
+              <div class="macro-row">
+                <div class="macro"><span>Proteína</span><strong>236g</strong></div>
+                <div class="macro"><span>Gordura</span><strong>24g</strong></div>
+                <div class="macro"><span>Carbo</span><strong>190g</strong></div>
+              </div>
+            </header>
+            <div class="meal-list">
+              <div class="meal">
+                <div class="meal-top"><h4>Café da manhã</h4><span class="numbers">456 kcal · 49P</span></div>
+                <p>Mingau com aveia 45g, leite desnatado 200ml e mel 8g; whey 30g e claras 120g.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="seg-cafe" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Almoço</h4><span class="numbers">624 kcal · 78P</span></div>
+                <p>Peito de frango 220g, arroz 130g, feijão 80g e salada grande.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="seg-almoco" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Lanche</h4><span class="numbers">295 kcal · 42P</span></div>
+                <p>Iogurte grego zero 250g, tangerina 1 un. e whey 20g.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="seg-lanche" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Jantar</h4><span class="numbers">512 kcal · 67P</span></div>
+                <p>Tilápia 240g, batata-doce 220g e legumes.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="seg-jantar" /> Feito</label></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day-card" data-day="ter">
+            <header class="day-header">
+              <div class="day-title">
+                <div>
+                  <h3>Terça</h3>
+                  <div class="workout">Peito e tríceps</div>
+                </div>
+                <span class="tag">1934 kcal</span>
+              </div>
+              <div class="macro-row">
+                <div class="macro"><span>Proteína</span><strong>227g</strong></div>
+                <div class="macro"><span>Gordura</span><strong>29g</strong></div>
+                <div class="macro"><span>Carbo</span><strong>205g</strong></div>
+              </div>
+            </header>
+            <div class="meal-list">
+              <div class="meal">
+                <div class="meal-top"><h4>Café da manhã</h4><span class="numbers">482 kcal · 47P</span></div>
+                <p>Whey 30g, aveia 50g, mamão 150g, mel 10g e claras 130g.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="ter-cafe" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Almoço</h4><span class="numbers">670 kcal · 78P</span></div>
+                <p>Patinho moído 200g, arroz 160g, feijão 80g e salada.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="ter-almoco" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Lanche</h4><span class="numbers">292 kcal · 40P</span></div>
+                <p>Whey 30g, melão 250g e iogurte grego zero 170g.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="ter-lanche" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Jantar</h4><span class="numbers">490 kcal · 62P</span></div>
+                <p>Frango 200g, mandioca 180g e legumes.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="ter-jantar" /> Feito</label></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day-card" data-day="qua">
+            <header class="day-header">
+              <div class="day-title">
+                <div>
+                  <h3>Quarta</h3>
+                  <div class="workout">Costas, bíceps e abdômen</div>
+                </div>
+                <span class="tag">1968 kcal</span>
+              </div>
+              <div class="macro-row">
+                <div class="macro"><span>Proteína</span><strong>229g</strong></div>
+                <div class="macro"><span>Gordura</span><strong>30g</strong></div>
+                <div class="macro"><span>Carbo</span><strong>211g</strong></div>
+              </div>
+            </header>
+            <div class="meal-list">
+              <div class="meal">
+                <div class="meal-top"><h4>Café da manhã</h4><span class="numbers">500 kcal · 50P</span></div>
+                <p>Mingau com aveia 45g, leite desnatado 200ml e mel 8g; whey 30g e manga 120g.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="qua-cafe" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Almoço</h4><span class="numbers">628 kcal · 80P</span></div>
+                <p>Frango 230g, arroz 150g, feijão 70g e salada.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="qua-almoco" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Lanche</h4><span class="numbers">300 kcal · 42P</span></div>
+                <p>Iogurte grego zero 250g, tangerina 1 un. e whey 20g.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="qua-lanche" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Jantar</h4><span class="numbers">540 kcal · 57P</span></div>
+                <p>Tilápia 220g, macarrão simples 170g, molho de tomate e legumes.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="qua-jantar" /> Feito</label></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day-card" data-day="qui">
+            <header class="day-header">
+              <div class="day-title">
+                <div>
+                  <h3>Quinta</h3>
+                  <div class="workout">Descanso + caminhada 1h30</div>
+                </div>
+                <span class="tag">1826 kcal</span>
+              </div>
+              <div class="macro-row">
+                <div class="macro"><span>Proteína</span><strong>219g</strong></div>
+                <div class="macro"><span>Gordura</span><strong>25g</strong></div>
+                <div class="macro"><span>Carbo</span><strong>176g</strong></div>
+              </div>
+            </header>
+            <div class="meal-list">
+              <div class="meal">
+                <div class="meal-top"><h4>Café da manhã</h4><span class="numbers">430 kcal · 47P</span></div>
+                <p>Whey 30g, aveia 35g, mamão 200g e claras 160g.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="qui-cafe" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Almoço</h4><span class="numbers">610 kcal · 75P</span></div>
+                <p>Patinho 180g, arroz 130g, feijão 90g e salada.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="qui-almoco" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Lanche</h4><span class="numbers">286 kcal · 39P</span></div>
+                <p>Iogurte grego zero 250g, melão 250g e whey 15g.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="qui-lanche" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Jantar</h4><span class="numbers">500 kcal · 58P</span></div>
+                <p>Tilápia 230g, batata inglesa 250g e legumes.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="qui-jantar" /> Feito</label></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day-card" data-day="sex">
+            <header class="day-header">
+              <div class="day-title">
+                <div>
+                  <h3>Sexta</h3>
+                  <div class="workout">Ombro, trapézio, antebraço e abdômen</div>
+                </div>
+                <span class="tag">1945 kcal</span>
+              </div>
+              <div class="macro-row">
+                <div class="macro"><span>Proteína</span><strong>231g</strong></div>
+                <div class="macro"><span>Gordura</span><strong>28g</strong></div>
+                <div class="macro"><span>Carbo</span><strong>202g</strong></div>
+              </div>
+            </header>
+            <div class="meal-list">
+              <div class="meal">
+                <div class="meal-top"><h4>Café da manhã</h4><span class="numbers">474 kcal · 49P</span></div>
+                <p>Mingau com aveia 45g, leite desnatado 200ml e mel 10g; whey 30g e claras 130g.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="sex-cafe" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Almoço</h4><span class="numbers">642 kcal · 77P</span></div>
+                <p>Frango 220g, arroz 160g, feijão 80g e salada.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="sex-almoco" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Lanche</h4><span class="numbers">319 kcal · 43P</span></div>
+                <p>Whey 25g, iogurte grego zero 250g e manga 120g.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="sex-lanche" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Jantar</h4><span class="numbers">510 kcal · 62P</span></div>
+                <p>Tilápia 240g, cuscuz 180g e legumes.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="sex-jantar" /> Feito</label></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day-card" data-day="sab">
+            <header class="day-header">
+              <div class="day-title">
+                <div>
+                  <h3>Sábado</h3>
+                  <div class="workout">Quadríceps</div>
+                </div>
+                <span class="tag is-free">2358 kcal</span>
+              </div>
+              <div class="macro-row">
+                <div class="macro"><span>Proteína</span><strong>215g</strong></div>
+                <div class="macro"><span>Gordura</span><strong>58g</strong></div>
+                <div class="macro"><span>Carbo</span><strong>268g</strong></div>
+              </div>
+            </header>
+            <div class="meal-list">
+              <div class="meal">
+                <div class="meal-top"><h4>Café da manhã</h4><span class="numbers">438 kcal · 48P</span></div>
+                <p>Whey 30g, aveia 40g, mamão 180g, mel 10g e claras 150g.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="sab-cafe" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Almoço</h4><span class="numbers">610 kcal · 73P</span></div>
+                <p>Frango 210g, arroz 160g, feijão 70g e salada.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="sab-almoco" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Lanche</h4><span class="numbers">280 kcal · 38P</span></div>
+                <p>Iogurte grego zero 250g, melão 250g e whey 15g.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="sab-lanche" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Jantar livre</h4><span class="numbers">1030 kcal · 56P</span></div>
+                <p>Pizza 3 fatias médias, refrigerante zero e whey 30g depois se precisar bater proteína.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="sab-jantar" /> Feito</label></div>
+              </div>
+            </div>
+          </article>
+
+          <article class="day-card" data-day="dom">
+            <header class="day-header">
+              <div class="day-title">
+                <div>
+                  <h3>Domingo</h3>
+                  <div class="workout">Corrida 5 km · pace 6:30 a 7:20</div>
+                </div>
+                <span class="tag">1992 kcal</span>
+              </div>
+              <div class="macro-row">
+                <div class="macro"><span>Proteína</span><strong>222g</strong></div>
+                <div class="macro"><span>Gordura</span><strong>27g</strong></div>
+                <div class="macro"><span>Carbo</span><strong>222g</strong></div>
+              </div>
+            </header>
+            <div class="meal-list">
+              <div class="meal">
+                <div class="meal-top"><h4>Café da manhã</h4><span class="numbers">520 kcal · 48P</span></div>
+                <p>Mingau com aveia 55g, leite desnatado 250ml e mel 10g; whey 30g e banana 1 un.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="dom-cafe" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Almoço</h4><span class="numbers">622 kcal · 76P</span></div>
+                <p>Tilápia 240g, arroz 170g, feijão 70g e salada.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="dom-almoco" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Lanche</h4><span class="numbers">300 kcal · 40P</span></div>
+                <p>Iogurte grego zero 250g, tangerina 1 un. e whey 20g.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="dom-lanche" /> Feito</label></div>
+              </div>
+              <div class="meal">
+                <div class="meal-top"><h4>Jantar</h4><span class="numbers">550 kcal · 58P</span></div>
+                <p>Patinho 170g, macarrão simples 180g, molho de tomate e legumes.</p>
+                <div class="checkline"><label><input type="checkbox" data-check="dom-jantar" /> Feito</label></div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <section class="section tool-grid">
+        <article class="panel">
+          <h3>Resumo em planilha</h3>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Dia</th>
+                  <th>Treino</th>
+                  <th>Kcal</th>
+                  <th>Proteína</th>
+                  <th>Gordura</th>
+                  <th>Carbo</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>Segunda</td><td>Posterior + corrida 2 km</td><td>1887</td><td>236g</td><td>24g</td><td>190g</td></tr>
+                <tr><td>Terça</td><td>Peito e tríceps</td><td>1934</td><td>227g</td><td>29g</td><td>205g</td></tr>
+                <tr><td>Quarta</td><td>Costas, bíceps e abdômen</td><td>1968</td><td>229g</td><td>30g</td><td>211g</td></tr>
+                <tr><td>Quinta</td><td>Descanso + caminhada</td><td>1826</td><td>219g</td><td>25g</td><td>176g</td></tr>
+                <tr><td>Sexta</td><td>Ombro, trapézio, antebraço</td><td>1945</td><td>231g</td><td>28g</td><td>202g</td></tr>
+                <tr><td>Sábado</td><td>Quadríceps + pizza</td><td>2358</td><td>215g</td><td>58g</td><td>268g</td></tr>
+                <tr><td>Domingo</td><td>Corrida 5 km</td><td>1992</td><td>222g</td><td>27g</td><td>222g</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </article>
+
+        <div class="target-grid">
+          <article class="panel">
+            <h3>Regras rápidas</h3>
+            <ul>
+              <li>Carnes, frango e peixe estão em peso cozido.</li>
+              <li>Use frigideira antiaderente, air fryer ou grelha para segurar gordura.</li>
+              <li>Se faltar fome, reduza arroz/batata antes de reduzir proteína.</li>
+              <li>Se o treino pesar, suba 30g a 50g de carbo no pré ou pós e ajuste no jantar.</li>
+              <li>Gordura fica baixa na semana; o sábado é o dia mais flexível.</li>
+            </ul>
+          </article>
+
+          <article class="panel note">
+            <h3>Treino pesado</h3>
+            <p>
+              Com TMB de 2200 kcal e cargas altas no treino, 2000 kcal é um déficit real. Se força,
+              sono ou recuperação caírem por mais de 3 treinos, use a versão de ajuste: +150 a +250
+              kcal em carboidrato limpo nos dias de perna, costas ou corrida.
+            </p>
+          </article>
+        </div>
+      </section>
+    </main>
+
+    <aside class="progress-panel" aria-live="polite">
+      <div>
+        <strong id="progress-title">0 de 28 refeições</strong>
+        <span id="progress-subtitle">Marque as refeições feitas durante a semana.</span>
+      </div>
+      <button type="button" id="reset-progress">Limpar</button>
+    </aside>
+
+    <script>
+      (function () {
+        var storageKey = "focus-meal-checks-v1";
+        var checks = Array.prototype.slice.call(document.querySelectorAll("[data-check]"));
+        var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-filter]"));
+        var cards = Array.prototype.slice.call(document.querySelectorAll("[data-day]"));
+        var title = document.getElementById("progress-title");
+        var subtitle = document.getElementById("progress-subtitle");
+        var reset = document.getElementById("reset-progress");
+
+        function readState() {
+          try {
+            return JSON.parse(localStorage.getItem(storageKey)) || {};
+          } catch (_) {
+            return {};
+          }
+        }
+
+        function writeState(state) {
+          try {
+            localStorage.setItem(storageKey, JSON.stringify(state));
+          } catch (_) {}
+        }
+
+        function updateProgress() {
+          var done = checks.filter(function (input) { return input.checked; }).length;
+          var total = checks.length;
+          title.textContent = done + " de " + total + " refeições";
+          subtitle.textContent = done === total
+            ? "Semana fechada dentro do plano."
+            : "Faltam " + (total - done) + " marcações para completar.";
+        }
+
+        function hydrate() {
+          var state = readState();
+          checks.forEach(function (input) {
+            input.checked = Boolean(state[input.dataset.check]);
+          });
+          updateProgress();
+        }
+
+        checks.forEach(function (input) {
+          input.addEventListener("change", function () {
+            var state = readState();
+            state[input.dataset.check] = input.checked;
+            writeState(state);
+            updateProgress();
+          });
+        });
+
+        buttons.forEach(function (button) {
+          button.addEventListener("click", function () {
+            var filter = button.dataset.filter;
+            buttons.forEach(function (item) { item.classList.toggle("is-active", item === button); });
+            cards.forEach(function (card) {
+              card.classList.toggle("is-hidden", filter !== "all" && card.dataset.day !== filter);
+            });
+            document.getElementById("week-grid").scrollIntoView({ block: "start" });
+          });
+        });
+
+        reset.addEventListener("click", function () {
+          writeState({});
+          checks.forEach(function (input) { input.checked = false; });
+          updateProgress();
+        });
+
+        hydrate();
+      })();
+    </script>
+  </body>
+</html>
