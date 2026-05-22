@@ -51,7 +51,7 @@
       .shell {
         width: min(1180px, 100%);
         margin: 0 auto;
-        padding: 18px 16px 96px;
+        padding: 18px 16px 36px;
       }
 
       .topbar {
@@ -60,8 +60,9 @@
         z-index: 5;
         margin: 0 0 18px;
         padding: 12px 16px;
-        background: rgba(246, 247, 242, 0.9);
-        border-bottom: 1px solid rgba(217, 222, 210, 0.8);
+        background: linear-gradient(135deg, #101820 0%, #123134 100%);
+        border-bottom: 1px solid rgba(47, 125, 79, 0.35);
+        color: white;
         backdrop-filter: blur(14px);
       }
 
@@ -88,7 +89,7 @@
         display: grid;
         place-items: center;
         flex: 0 0 auto;
-        background: var(--ink);
+        background: linear-gradient(135deg, #2f7d4f, #167a7f);
         color: white;
         font-weight: 800;
       }
@@ -106,7 +107,7 @@
       }
 
       .brand-text span {
-        color: var(--muted);
+        color: rgba(255, 255, 255, 0.72);
         font-size: 13px;
       }
 
@@ -115,9 +116,9 @@
         border: 1px solid var(--line);
         border-radius: 8px;
         padding: 9px 12px;
-        background: var(--panel);
+        background: rgba(255, 255, 255, 0.1);
         text-decoration: none;
-        color: var(--muted);
+        color: white;
         font-size: 14px;
         font-weight: 700;
       }
@@ -173,6 +174,7 @@
       .metric,
       .panel,
       .day-card {
+        min-width: 0;
         background: var(--panel);
         border: 1px solid var(--line);
         border-radius: 8px;
@@ -384,7 +386,7 @@
       }
 
       .checkline {
-        display: flex;
+        display: none;
         flex-wrap: wrap;
         gap: 8px;
       }
@@ -434,6 +436,7 @@
       }
 
       .table-wrap {
+        max-width: 100%;
         overflow-x: auto;
         border: 1px solid var(--line);
         border-radius: 8px;
@@ -465,46 +468,6 @@
 
       tr:last-child td {
         border-bottom: 0;
-      }
-
-      .progress-panel {
-        position: fixed;
-        left: 12px;
-        right: 12px;
-        bottom: 12px;
-        z-index: 8;
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-        gap: 12px;
-        border: 1px solid rgba(16, 24, 32, 0.14);
-        border-radius: 8px;
-        padding: 11px 12px;
-        background: rgba(16, 24, 32, 0.94);
-        color: white;
-        box-shadow: 0 14px 36px rgba(16, 24, 32, 0.28);
-      }
-
-      .progress-panel strong,
-      .progress-panel span {
-        display: block;
-      }
-
-      .progress-panel span {
-        color: #cbd5d8;
-        font-size: 12px;
-      }
-
-      .progress-panel button {
-        flex: 0 0 auto;
-        border: 1px solid rgba(255, 255, 255, 0.22);
-        border-radius: 8px;
-        padding: 8px 10px;
-        background: transparent;
-        color: white;
-        cursor: pointer;
-        font-size: 13px;
-        font-weight: 800;
       }
 
       .note {
@@ -540,12 +503,6 @@
           grid-template-columns: 1.05fr 0.95fr;
         }
 
-        .progress-panel {
-          left: 50%;
-          right: auto;
-          width: min(560px, calc(100% - 32px));
-          transform: translateX(-50%);
-        }
       }
 
       @media (min-width: 1080px) {
@@ -704,22 +661,22 @@
             <div class="meal-list">
               <div class="meal">
                 <div class="meal-top"><h4>Café da manhã</h4><span class="numbers">456 kcal · 49P</span></div>
-                <p>Mingau com aveia 45g, leite desnatado 200ml e mel 8g; whey 30g e claras 120g.</p>
+                <p>Prepare um mingau cozinhando 45g de aveia em flocos com 200ml de leite desnatado; finalize com 8g de mel. Tome 30g de whey à parte e coma 120g de claras mexidas.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="seg-cafe" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Almoço</h4><span class="numbers">624 kcal · 78P</span></div>
-                <p>Peito de frango 220g, arroz 130g, feijão 80g e salada grande.</p>
+                <p>Peito de frango grelhado 220g já cozido, arroz cozido 130g, feijão cozido 80g e salada grande sem óleo. Use limão, vinagre, sal e ervas.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="seg-almoco" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Lanche</h4><span class="numbers">295 kcal · 42P</span></div>
-                <p>Iogurte grego zero 250g, tangerina 1 un. e whey 20g.</p>
+                <p>Iogurte grego zero 250g, 1 tangerina e 20g de whey misturado em água ou no próprio iogurte.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="seg-lanche" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Jantar</h4><span class="numbers">512 kcal · 67P</span></div>
-                <p>Tilápia 240g, batata-doce 220g e legumes.</p>
+                <p>Tilápia grelhada ou na air fryer 240g já cozida, batata-doce cozida 220g e legumes à vontade sem óleo.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="seg-jantar" /> Feito</label></div>
               </div>
             </div>
@@ -743,22 +700,22 @@
             <div class="meal-list">
               <div class="meal">
                 <div class="meal-top"><h4>Café da manhã</h4><span class="numbers">482 kcal · 47P</span></div>
-                <p>Whey 30g, aveia 50g, mamão 150g, mel 10g e claras 130g.</p>
+                <p>Shake com whey 30g em água. Ao lado: aveia 50g misturada no mamão 150g com 10g de mel, mais 130g de claras mexidas.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="ter-cafe" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Almoço</h4><span class="numbers">670 kcal · 78P</span></div>
-                <p>Patinho moído 200g, arroz 160g, feijão 80g e salada.</p>
+                <p>Patinho moído 200g já pronto, feito sem óleo e escorrido se soltar gordura; arroz cozido 160g, feijão 80g e salada.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="ter-almoco" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Lanche</h4><span class="numbers">292 kcal · 40P</span></div>
-                <p>Whey 30g, melão 250g e iogurte grego zero 170g.</p>
+                <p>Whey 30g em água, melão 250g em cubos e iogurte grego zero 170g.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="ter-lanche" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Jantar</h4><span class="numbers">490 kcal · 62P</span></div>
-                <p>Frango 200g, mandioca 180g e legumes.</p>
+                <p>Frango grelhado/desfiado 200g já cozido, mandioca cozida 180g e legumes. Evite manteiga ou azeite nesse prato.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="ter-jantar" /> Feito</label></div>
               </div>
             </div>
@@ -782,22 +739,22 @@
             <div class="meal-list">
               <div class="meal">
                 <div class="meal-top"><h4>Café da manhã</h4><span class="numbers">500 kcal · 50P</span></div>
-                <p>Mingau com aveia 45g, leite desnatado 200ml e mel 8g; whey 30g e manga 120g.</p>
+                <p>Prepare um mingau cozinhando 45g de aveia em flocos com 200ml de leite desnatado; finalize com 8g de mel. Tome 30g de whey à parte e coma manga 120g.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="qua-cafe" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Almoço</h4><span class="numbers">628 kcal · 80P</span></div>
-                <p>Frango 230g, arroz 150g, feijão 70g e salada.</p>
+                <p>Frango grelhado 230g já cozido, arroz cozido 150g, feijão cozido 70g e salada grande com temperos sem óleo.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="qua-almoco" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Lanche</h4><span class="numbers">300 kcal · 42P</span></div>
-                <p>Iogurte grego zero 250g, tangerina 1 un. e whey 20g.</p>
+                <p>Iogurte grego zero 250g, 1 tangerina e 20g de whey. Se preferir, misture o whey no iogurte para virar creme.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="qua-lanche" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Jantar</h4><span class="numbers">540 kcal · 57P</span></div>
-                <p>Tilápia 220g, macarrão simples 170g, molho de tomate e legumes.</p>
+                <p>Tilápia 220g já cozida, macarrão cozido 170g, molho de tomate simples e legumes. Sem queijo e sem azeite para segurar gordura.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="qua-jantar" /> Feito</label></div>
               </div>
             </div>
@@ -821,22 +778,22 @@
             <div class="meal-list">
               <div class="meal">
                 <div class="meal-top"><h4>Café da manhã</h4><span class="numbers">430 kcal · 47P</span></div>
-                <p>Whey 30g, aveia 35g, mamão 200g e claras 160g.</p>
+                <p>Whey 30g em água. Ao lado: aveia 35g misturada no mamão 200g, mais 160g de claras mexidas.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="qui-cafe" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Almoço</h4><span class="numbers">610 kcal · 75P</span></div>
-                <p>Patinho 180g, arroz 130g, feijão 90g e salada.</p>
+                <p>Patinho moído 180g já cozido, arroz cozido 130g, feijão 90g e salada. Faça o patinho com alho, cebola e tomate, sem óleo.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="qui-almoco" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Lanche</h4><span class="numbers">286 kcal · 39P</span></div>
-                <p>Iogurte grego zero 250g, melão 250g e whey 15g.</p>
+                <p>Iogurte grego zero 250g, melão 250g e 15g de whey misturado para aumentar proteína sem pesar.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="qui-lanche" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Jantar</h4><span class="numbers">500 kcal · 58P</span></div>
-                <p>Tilápia 230g, batata inglesa 250g e legumes.</p>
+                <p>Tilápia 230g já cozida, batata inglesa cozida 250g e legumes. Pode usar páprica, limão e pimenta.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="qui-jantar" /> Feito</label></div>
               </div>
             </div>
@@ -860,22 +817,22 @@
             <div class="meal-list">
               <div class="meal">
                 <div class="meal-top"><h4>Café da manhã</h4><span class="numbers">474 kcal · 49P</span></div>
-                <p>Mingau com aveia 45g, leite desnatado 200ml e mel 10g; whey 30g e claras 130g.</p>
+                <p>Prepare um mingau cozinhando 45g de aveia em flocos com 200ml de leite desnatado; finalize com 10g de mel. Tome 30g de whey à parte e coma 130g de claras.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="sex-cafe" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Almoço</h4><span class="numbers">642 kcal · 77P</span></div>
-                <p>Frango 220g, arroz 160g, feijão 80g e salada.</p>
+                <p>Frango 220g já cozido, arroz cozido 160g, feijão 80g e salada. Bom almoço para segurar energia no treino de ombro.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="sex-almoco" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Lanche</h4><span class="numbers">319 kcal · 43P</span></div>
-                <p>Whey 25g, iogurte grego zero 250g e manga 120g.</p>
+                <p>Whey 25g misturado no iogurte grego zero 250g, com manga 120g picada por cima.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="sex-lanche" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Jantar</h4><span class="numbers">510 kcal · 62P</span></div>
-                <p>Tilápia 240g, cuscuz 180g e legumes.</p>
+                <p>Tilápia 240g já cozida, batata inglesa cozida 250g e legumes. Use sal, páprica, limão e ervas; sem manteiga ou azeite para manter gordura baixa.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="sex-jantar" /> Feito</label></div>
               </div>
             </div>
@@ -899,22 +856,22 @@
             <div class="meal-list">
               <div class="meal">
                 <div class="meal-top"><h4>Café da manhã</h4><span class="numbers">438 kcal · 48P</span></div>
-                <p>Whey 30g, aveia 40g, mamão 180g, mel 10g e claras 150g.</p>
+                <p>Whey 30g em água. Ao lado: aveia 40g misturada no mamão 180g com 10g de mel, mais 150g de claras.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="sab-cafe" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Almoço</h4><span class="numbers">610 kcal · 73P</span></div>
-                <p>Frango 210g, arroz 160g, feijão 70g e salada.</p>
+                <p>Frango 210g já cozido, arroz cozido 160g, feijão 70g e salada. Mantém proteína alta antes do jantar livre.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="sab-almoco" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Lanche</h4><span class="numbers">280 kcal · 38P</span></div>
-                <p>Iogurte grego zero 250g, melão 250g e whey 15g.</p>
+                <p>Iogurte grego zero 250g, melão 250g e 15g de whey misturado. Deixe simples para caber a pizza à noite.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="sab-lanche" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Jantar livre</h4><span class="numbers">1030 kcal · 56P</span></div>
-                <p>Pizza 3 fatias médias, refrigerante zero e whey 30g depois se precisar bater proteína.</p>
+                <p>Pizza 3 fatias médias. Escolha sabores menos gordurosos quando der, como marguerita, frango ou atum. Refrigerante zero liberado. Tome whey 30g depois se faltar proteína.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="sab-jantar" /> Feito</label></div>
               </div>
             </div>
@@ -938,22 +895,22 @@
             <div class="meal-list">
               <div class="meal">
                 <div class="meal-top"><h4>Café da manhã</h4><span class="numbers">520 kcal · 48P</span></div>
-                <p>Mingau com aveia 55g, leite desnatado 250ml e mel 10g; whey 30g e banana 1 un.</p>
+                <p>Prepare um mingau cozinhando 55g de aveia em flocos com 250ml de leite desnatado; finalize com 10g de mel. Tome 30g de whey à parte e coma 1 banana.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="dom-cafe" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Almoço</h4><span class="numbers">622 kcal · 76P</span></div>
-                <p>Tilápia 240g, arroz 170g, feijão 70g e salada.</p>
+                <p>Tilápia 240g já cozida, arroz cozido 170g, feijão 70g e salada. Boa reposição para a corrida de 5 km.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="dom-almoco" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Lanche</h4><span class="numbers">300 kcal · 40P</span></div>
-                <p>Iogurte grego zero 250g, tangerina 1 un. e whey 20g.</p>
+                <p>Iogurte grego zero 250g, 1 tangerina e 20g de whey em água ou misturado no iogurte.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="dom-lanche" /> Feito</label></div>
               </div>
               <div class="meal">
                 <div class="meal-top"><h4>Jantar</h4><span class="numbers">550 kcal · 58P</span></div>
-                <p>Patinho 170g, macarrão simples 180g, molho de tomate e legumes.</p>
+                <p>Patinho moído 170g já cozido, macarrão cozido 180g, molho de tomate simples e legumes. Evite queijo para manter gordura baixa.</p>
                 <div class="checkline"><label><input type="checkbox" data-check="dom-jantar" /> Feito</label></div>
               </div>
             </div>
@@ -1013,63 +970,10 @@
       </section>
     </main>
 
-    <aside class="progress-panel" aria-live="polite">
-      <div>
-        <strong id="progress-title">0 de 28 refeições</strong>
-        <span id="progress-subtitle">Marque as refeições feitas durante a semana.</span>
-      </div>
-      <button type="button" id="reset-progress">Limpar</button>
-    </aside>
-
     <script>
       (function () {
-        var storageKey = "focus-meal-checks-v1";
-        var checks = Array.prototype.slice.call(document.querySelectorAll("[data-check]"));
         var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-filter]"));
         var cards = Array.prototype.slice.call(document.querySelectorAll("[data-day]"));
-        var title = document.getElementById("progress-title");
-        var subtitle = document.getElementById("progress-subtitle");
-        var reset = document.getElementById("reset-progress");
-
-        function readState() {
-          try {
-            return JSON.parse(localStorage.getItem(storageKey)) || {};
-          } catch (_) {
-            return {};
-          }
-        }
-
-        function writeState(state) {
-          try {
-            localStorage.setItem(storageKey, JSON.stringify(state));
-          } catch (_) {}
-        }
-
-        function updateProgress() {
-          var done = checks.filter(function (input) { return input.checked; }).length;
-          var total = checks.length;
-          title.textContent = done + " de " + total + " refeições";
-          subtitle.textContent = done === total
-            ? "Semana fechada dentro do plano."
-            : "Faltam " + (total - done) + " marcações para completar.";
-        }
-
-        function hydrate() {
-          var state = readState();
-          checks.forEach(function (input) {
-            input.checked = Boolean(state[input.dataset.check]);
-          });
-          updateProgress();
-        }
-
-        checks.forEach(function (input) {
-          input.addEventListener("change", function () {
-            var state = readState();
-            state[input.dataset.check] = input.checked;
-            writeState(state);
-            updateProgress();
-          });
-        });
 
         buttons.forEach(function (button) {
           button.addEventListener("click", function () {
@@ -1081,14 +985,6 @@
             document.getElementById("week-grid").scrollIntoView({ block: "start" });
           });
         });
-
-        reset.addEventListener("click", function () {
-          writeState({});
-          checks.forEach(function (input) { input.checked = false; });
-          updateProgress();
-        });
-
-        hydrate();
       })();
     </script>
   </body>
